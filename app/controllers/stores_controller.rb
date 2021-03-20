@@ -8,6 +8,8 @@ class StoresController < ApplicationController
     @storeqr = RQRCode::QRCode.new(@store.code)
   end
 
+  
+
   def update
 
   end
