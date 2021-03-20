@@ -1,2 +1,15 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+
+<% if customer_signed_in? %>
+    <p>I'm a Customer</p>
+<% end %>
+
+<% if business_user_signed_in? %>
+    <p>I'm a Businees user</p>
+<% end %>
+
+
+<%= link_to "Customer", new_customer_session_path, method: :get %>
+</br>
+<%= link_to 'Business', new_business_user_session_path, method: :get %>
