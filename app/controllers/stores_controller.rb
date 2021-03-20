@@ -6,6 +6,14 @@ class StoresController < ApplicationController
     @code = @store.code
 
     @storeqr = RQRCode::QRCode.new(@code)
+
+    @svg = qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 6,
+      standalone: true
+    )
   end
 
   def update
