@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_20_151453) do
+ActiveRecord::Schema.define(version: 2021_03_20_152249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,36 @@ ActiveRecord::Schema.define(version: 2021_03_20_151453) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "confirmations", force: :cascade do |t|
+    t.time "start_time"
+    t.time "end_time"
+    t.integer "position"
+    t.string "qrcode"
+    t.bigint "user_id", null: false
+    t.bigint "store_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["store_id"], name: "index_confirmations_on_store_id"
+    t.index ["user_id"], name: "index_confirmations_on_user_id"
+  end
+
   create_table "customers", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "stores", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "capacity"
+    t.string "store_qrcode"
+    t.float "longitude"
+    t.float "latitude"
+    t.bigint "business_user_id", null: false
+    t.text "message"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["business_user_id"], name: "index_stores_on_business_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,4 +65,7 @@ ActiveRecord::Schema.define(version: 2021_03_20_151453) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "confirmations", "stores"
+  add_foreign_key "confirmations", "users"
+  add_foreign_key "stores", "business_users"
 end
