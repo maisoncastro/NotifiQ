@@ -4,11 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  def customer?
-    type == 'Customer'
-  end
+  # def customer?
+  #   type == 'Customer'
+  # end
 
-  def business?
-    type == 'Business'
-  end
+  # def business?
+  #   type == 'Business'
+  # end
 end
