@@ -1,29 +1,26 @@
 class StoresController < ApplicationController
   require 'rqrcode'
- #This is still in progress
-  def storeqrcode
-    @store = Store.last
-    @code = @store.code
+  # This is still in progress
+  # def storeqrcode
+  #   @store = Store.last
+  #   @code = @store.code
 
-    @storeqr = RQRCode::QRCode.new(@store.code)
-  end
+  #   @storeqr = RQRCode::QRCode.new(@store.code)
+  # end
 
-  def update
+  # def update
 
-  end
+  # end
 
-  def edit
+  # def edit
 
-  end
+  # end
 
-  def show
+  # def show
 
-  end
+  # end
 
-  private
+  # def qr_params
 
-  def qr_params
-    
-  end
-
+  # end
 end
