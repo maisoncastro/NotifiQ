@@ -1,5 +1,5 @@
 class Confirmation < ApplicationRecord
-  belongs_to :user
+  belongs_to :customer
   belongs_to :store
 
   validates :start_time, presence: true

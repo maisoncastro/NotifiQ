@@ -9,4 +9,5 @@ class Store < ApplicationRecord
     self.code = SecureRandom.hex
     save
   end
+  
 end

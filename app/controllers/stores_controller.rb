@@ -5,10 +5,8 @@ class StoresController < ApplicationController
     @store = Store.last
     @code = @store.code
 
-    @storeqr = RQRCode::QRCode.new(@store.code)
+    @storeqr = RQRCode::QRCode.new(@code)
   end
-
-  
 
   def update
 
