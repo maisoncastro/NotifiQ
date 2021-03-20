@@ -5,7 +5,7 @@ class CreateConfirmations < ActiveRecord::Migration[6.0]
       t.time :end_time
       t.integer :position
       t.string :qrcode
-      t.references :user, null: false, foreign_key: true
+      t.references :customer, null: false, foreign_key: true
       t.references :store, null: false, foreign_key: true
 
       t.timestamps
