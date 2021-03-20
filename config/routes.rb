@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :dashboard do
+    get 'dashboard/index'
+  end
   get 'confirmations/new'
   get 'confirmations/show'
   devise_for :customers
