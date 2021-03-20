@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   
+=======
+  get 'stores/qrcode'
+  get 'stores/update'
+  get 'stores/edit'
+  get 'stores/show'
+>>>>>>> master
   root to: 'pages#home'
   get 'dashboard/index'
   get 'confirmations/new'
