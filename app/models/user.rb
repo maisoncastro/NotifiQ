@@ -8,7 +8,7 @@ class User < ApplicationRecord
     type == 'Customer'
   end
 
-  def seller?
+  def business?
     type == 'Business'
   end
 end
