@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'confirmations/new'
+  get 'confirmations/show'
   devise_for :customers
   devise_for :business_users
   root to: 'pages#home'
