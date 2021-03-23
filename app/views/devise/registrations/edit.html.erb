@@ -10,6 +10,21 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :fname,
+                required: false,
+                label: 'First Name',
+                input_html: { autocomplete: "new-fname" } %>
+
+    <%= f.input :lname,
+                required: false,
+                label: 'Last Name',
+                input_html: { autocomplete: "new-lname" } %>
+        
+    <%= f.input :username,
+                required: false,
+                label: 'Username',
+                input_html: { autocomplete: "new-username" } %>
+              
     <%= f.input :password,
                 hint: "leave it blank if you don't want to change it",
                 required: false,
