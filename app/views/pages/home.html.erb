@@ -3,13 +3,15 @@
 
 <% if customer_signed_in? %>
     <p>I'm a Customer</p>
+    <%= link_to 'Edit my Customer Profile', edit_customer_registration_path %>
 <% end %>
 
 <% if business_user_signed_in? %>
     <p>I'm a Businees user</p>
+    <%= link_to 'Edit my Busines User Profile', edit_business_user_registration_path %>
 <% end %>
 
-
+</br>
 <%= link_to "Customer", new_customer_session_path, method: :get %>
 </br>
 <%= link_to 'Business', new_business_user_session_path, method: :get %>
