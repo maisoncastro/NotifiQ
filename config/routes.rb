@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard/index'
   get 'confirmations/new'
+  get 'confirmations/create'
   get 'confirmations/show'
   get 'confirmations/index'
   devise_for :customers, path: 'customers'

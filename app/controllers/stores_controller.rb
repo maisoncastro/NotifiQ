@@ -16,7 +16,4 @@ class StoresController < ApplicationController
 
   def show
   end
-
-  # def qr_params
-  # end
 end
