@@ -3,4 +3,15 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+ scope :business_users, -> { where(type: 'BusinessUser') }
+ scope :customers, -> { where(type: 'Customer') }
+
+  # def customer?
+  #   type == 'Customer'
+  # end
+
+  # def business?
+  #   type == 'Business'
+  # end
 end
