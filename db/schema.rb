@@ -25,12 +25,12 @@ ActiveRecord::Schema.define(version: 2021_03_23_003226) do
     t.time "end_time"
     t.integer "position"
     t.string "qrcode"
-    t.bigint "user_id", null: false
+    t.bigint "customer_id", null: false
     t.bigint "store_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["customer_id"], name: "index_confirmations_on_customer_id"
     t.index ["store_id"], name: "index_confirmations_on_store_id"
-    t.index ["user_id"], name: "index_confirmations_on_user_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -68,7 +68,7 @@ ActiveRecord::Schema.define(version: 2021_03_23_003226) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "confirmations", "customers"
   add_foreign_key "confirmations", "stores"
-  add_foreign_key "confirmations", "users"
   add_foreign_key "stores", "business_users"
 end

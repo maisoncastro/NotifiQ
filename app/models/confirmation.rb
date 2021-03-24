@@ -1,6 +1,6 @@
 class Confirmation < ApplicationRecord
-  belongs_to :customer, optional: true
-  belongs_to :store, optional: true
+  belongs_to :customer
+  belongs_to :store
 
   # validates :start_time, presence: true
   # validates :end_time, presence: true

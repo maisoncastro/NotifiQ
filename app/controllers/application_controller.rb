@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     if resource.instance_of?(BusinessUser)
       dashboard_index_path
     else
-      confirmations_index_path
+      confirmations_path
     end
   end
 

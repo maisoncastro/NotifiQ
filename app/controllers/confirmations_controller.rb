@@ -16,6 +16,7 @@ class ConfirmationsController < ApplicationController
   end
 
   def show
+    @confirmation = Confirmation.find(params[:id])
     @confirmation = Confirmation.new
   end
 
