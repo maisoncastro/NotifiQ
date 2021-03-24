@@ -1,9 +1,9 @@
 class Store < ApplicationRecord
-  belongs_to :business_user
+  belongs_to :user
   has_many :confirmations
   validates :name, uniqueness: true
 
-  after_create :store_qrcode
+  # after_create :store_qrcode
 
   def store_qrcode
     self.code = SecureRandom.hex
