@@ -4,8 +4,11 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- scope :business_users, -> { where(type: 'BusinessUser') }
- scope :customers, -> { where(type: 'Customer') }
+  has_many :confirmations
+  has_many :stores
+
+  scope :business_users, -> { where(type: 'BusinessUser') }
+  scope :customers, -> { where(type: 'Customer') }
 
   # def customer?
   #   type == 'Customer'

@@ -1,0 +1,12 @@
+<h1>Stores#new</h1>
+<p>Find me in app/views/stores/store.html.erb</p>
+
+<%= current_business_user.id %>
+<div class="container"> 
+  <%= simple_form_for [@user, @store] do |l| %>
+    <%= l.input :name %>
+    <%= l.input :address %>
+    <%= l.input :capacity %>
+    <%= l.submit 'Submit', :class => 'btn purple' %>
+  <% end %>
+</div> 
