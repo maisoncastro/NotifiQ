@@ -16,7 +16,7 @@ class StoresController < ApplicationController
 
   def create
     @store = Store.new(store_params)
-    @store.business_user_id = current_user.id
+    @store.user_id = current_user.id
     # raise
     if @store.save
       redirect_to dashboard_index_path

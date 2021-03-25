@@ -3,7 +3,7 @@
 
 <%= current_business_user.id %>
 <div class="container"> 
-  <%= simple_form_for [@business_user, @store] do |l| %>
+  <%= simple_form_for [@user, @store] do |l| %>
     <%= l.input :name %>
     <%= l.input :address %>
     <%= l.input :capacity %>

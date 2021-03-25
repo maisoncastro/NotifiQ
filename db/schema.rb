@@ -26,14 +26,6 @@ ActiveRecord::Schema.define(version: 2021_03_24_134155) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["customer_id"], name: "index_confirmations_on_customer_id"
     t.index ["store_id"], name: "index_confirmations_on_store_id"
-<<<<<<< HEAD
-  end
-
-  create_table "customers", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-=======
->>>>>>> master
   end
 
   create_table "stores", force: :cascade do |t|
@@ -66,10 +58,5 @@ ActiveRecord::Schema.define(version: 2021_03_24_134155) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "confirmations", "customers"
   add_foreign_key "confirmations", "stores"
-<<<<<<< HEAD
-  add_foreign_key "stores", "business_users"
-=======
->>>>>>> master
 end
