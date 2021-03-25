@@ -1,14 +1,14 @@
 class ConfirmationsController < ApplicationController
   def new
-    @conifrmation = Confirmation.new
+    @confirmation = Confirmation.new
   end
 
   def create
-    @conifrmation = Confirmation.new(confirmation_params)
-    @conifrmation.customer = current_customer
+    @confirmation = Confirmation.new(confirmation_params)
+    @confirmation.customer = current_customer_user
     @store = Store.find(params[:store_id])
-    @conifrmation.store = @store
-    if @conifrmation.save
+    @confirmation.store = @store
+    if @confirmation.save
       redirect_to confirmations_index_path
     else
       render :new
