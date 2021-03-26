@@ -1,1 +1,7 @@
 <h1>Confirmations#index</h1>
+<% @confirmations.each do |confirmation| %>
+<%= confirmation.start_time %>
+<%= confirmation.end_time %>
+<%=  confirmation.position%>
+<%= confirmation.qrcode %>
+<% end %>
