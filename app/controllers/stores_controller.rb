@@ -17,7 +17,12 @@ class StoresController < ApplicationController
   end
 
   def update
-
+    @store.update(store_params)
+      if @store.save!
+      redirect_to stores_path(@stores)
+    else
+      render :edit
+    end
   end
 
   def edit
@@ -25,7 +30,7 @@ class StoresController < ApplicationController
   end
 
   def show
-
+    @store = Store.new
   end
 
   private
