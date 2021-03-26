@@ -5,14 +5,29 @@ Store.destroy_all
 
 puts "Creating Users.."
 
-one = User.create!(fname: "one", lname: "last", email: "one@email.com", password: "123456", type: "Customer")
+puts "Creating Customers.."
+one = Customer.create!(fname: "one", lname: "last", username: "one", email: "one@email.com", password: "123")
+two = Customer.create!(fname: "two", lname: "last", username: "two", email: "two@email.com", password: "123")
+three = Customer.create!(fname: "three", lname: "last", username: "three", email: "three@email.com", password: "123")
+four = Customer.create!(fname: "four", lname: "last", username: "four", email: "four@email.com", password: "123")
 
-puts "Creating Business.."
-u = BusinessUser.create!(email: 'a@a.a', password: '123456')
+puts "Creating Businesses.."
+saq = BusinessUser.create!(fname: "john", lname: "doe", username: "saq", email: "saq@email.com", password: "123")
+sqdc = BusinessUser.create!(fname: "jane", lname: "doe", username: "sqdc", email: "sqdc@email.com", password: "123")
+iga = BusinessUser.create!(fname: "jj", lname: "doe", username: "iga", email: "iga@email.com", password: "123")
 
-puts "Creating Store.."
-s = Store.new(name: 'test')
-s.user = u
-s.save!
+
+puts "Creating Stores.."
+saq_villeray = Store.new(name: "Saq Villeray", address: "123 Villeray", capacity: "10")
+saq_villeray.user = saq
+saq_villeray.save
+
+sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri", capacity: "10")
+sqdc_berri.user = sqdc
+sqdc_berri.save
+
+iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle", capacity: "10")
+iga_lasalle.user = iga
+iga_lasalle.save
 
 puts "Done!"
