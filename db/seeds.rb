@@ -9,21 +9,21 @@ puts "Creating Users.."
 puts "Creating Customers.."
 
 one = User.create!(fname: "one", lname: "last", username: "one", email: "one@email.com", password: "123", type: Customer)
-two = Customer.create!(fname: "two", lname: "last", username: "two", email: "two@email.com", password: "123")
-three = Customer.create!(fname: "three", lname: "last", username: "three", email: "three@email.com", password: "123")
-four = Customer.create!(fname: "four", lname: "last", username: "four", email: "four@email.com", password: "123")
+two = User.create!(fname: "two", lname: "last", username: "two", email: "two@email.com", password: "123", type: Customer)
+three = User.create!(fname: "three", lname: "last", username: "three", email: "three@email.com", password: "123", type: Customer)
+four = User.create!(fname: "four", lname: "last", username: "four", email: "four@email.com", password: "123", type: Customer)
 one.save!
 
 puts "Creating Businesses.."
 
 saq = User.create!(fname: "john", lname: "doe", username: "saq", email: "saq@email.com", password: "123", type: BusinessUser)
-sqdc = BusinessUser.create!(fname: "jane", lname: "doe", username: "sqdc", email: "sqdc@email.com", password: "123")
-iga = BusinessUser.create!(fname: "jj", lname: "doe", username: "iga", email: "iga@email.com", password: "123")
+sqdc = User.create!(fname: "jane", lname: "doe", username: "sqdc", email: "sqdc@email.com", password: "123", type: BusinessUser)
+iga = User.create!(fname: "jj", lname: "doe", username: "iga", email: "iga@email.com", password: "123", type: BusinessUser)
 saq.save!
 
 puts "Creating Stores.."
 
-saq_villeray = Store.new(name: "Saq Villeray", address: "123 Villeray", capacity: "10", store_qrcode: "")
+saq_villeray = Store.new(name: "Saq Villeray", address: "123 Villeray", capacity: "10")
 saq_villeray.user = saq
 saq_villeray.save!
 

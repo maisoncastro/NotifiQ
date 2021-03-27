@@ -50,7 +50,7 @@ class StoresController < ApplicationController
     # @store = Store.last
     #   @code = @store.store_qrcode
 
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/")
+    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/new")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
