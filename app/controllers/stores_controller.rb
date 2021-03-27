@@ -2,19 +2,19 @@ class StoresController < ApplicationController
   require 'rqrcode'
 
   # This is still in progress
-  def storeqrcode
-    @store = Store.last
-    @code = @store.code
+  # def storeqrcode
+  #   @store = Store.last
+  #   @code = @store.code
 
-    @storeqr = RQRCode::QRCode.new(@code)
+  #   @storeqr = RQRCode::QRCode.new(@code)
 
-    @svg = qrcode.as_svg(
-      offset: 0,
-      color: '000',
-      shape_rendering: 'crispEdges',
-      module_size: 11
-    )
-  end
+  #   @svg = storeqr.as_svg(
+  #     offset: 0,
+  #     color: '000',
+  #     shape_rendering: 'crispEdges',
+  #     module_size: 11
+  #   )
+  # end
 
   before_action :set_store, only: %i[show edit update]
 
@@ -46,6 +46,18 @@ class StoresController < ApplicationController
 
   def show
     @store = Store.new
+
+    # @store = Store.last
+    #   @code = @store.store_qrcode
+
+    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/")
+
+    @svg = @store_qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 11
+    )
   end
 
   private
