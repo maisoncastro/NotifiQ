@@ -22,6 +22,15 @@ class ConfirmationsController < ApplicationController
 
   def index
     @confirmations = Confirmation.all
+
+    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/")
+
+    @svg = @store_qrcode.as_svg(
+      offset: 0,
+      color: '000',
+      shape_rendering: 'crispEdges',
+      module_size: 11
+    )
   end
 
   private
