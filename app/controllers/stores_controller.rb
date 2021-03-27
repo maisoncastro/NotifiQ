@@ -50,7 +50,7 @@ class StoresController < ApplicationController
     # @store = Store.last
     #   @code = @store.store_qrcode
 
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/new")
+    @store_qrcode = RQRCode::QRCode.new("https://notifiq.herokuapp.com/confirmations")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
