@@ -42,12 +42,9 @@ tep.user_id = one.id
 tep.store = saq_villeray
 tep.save!
 
-puts "Done!"
-
-puts "Creating Confirmations.."
 confirm_one = Confirmation.new(start_time: Time.now)
 confirm_one.user_id = two.id
-confirm_one = saq_villeray
+confirm_one = sqdc_berri
 confirm_one.save 
 
 confirm_two = Confirmation.new(start_time: Time.now)
