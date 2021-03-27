@@ -29,7 +29,7 @@ class ConfirmationsController < ApplicationController
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
-      module_size: 11
+      module_size: 4
     )
   end
 
