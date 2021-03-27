@@ -1,11 +1,22 @@
 <h1>Confirmations#index</h1>
+
 <% @confirmations.each do |confirmation| %>
-<%= confirmation.start_time %>
-<%= confirmation.end_time %>
-<%= confirmation.position%>
-<%= confirmation.qrcode %>
+  <%= confirmation.start_time %>
+  <%= confirmation.end_time %>
+  <%= confirmation.position%>
+  <%= confirmation.qrcode %>
 <% end %>
 
-    <div class="code">
-        <%= @svg.html_safe %>
-    </div>
+<h1>H1 font family test</h1>
+<h2>H2 font family test</h2>
+<h3>H3 font family test</h3>
+<p>p paragraph font family test</p>
+<ul>
+  <li><%= link_to "Links", confirmations_path %></li>
+  <li><%= link_to "Links", confirmations_path %></li>
+</ul>
+
+
+<div class="code">
+    <%= @svg.html_safe %>
+</div>

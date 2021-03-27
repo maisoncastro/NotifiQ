@@ -11,3 +11,52 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+h1 {
+  text-decoration: underline;
+  font-weight: 800;
+  font-size: 36px;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 24px;
+}
+
+h3 {
+  font-style: italic;
+  font-size: 16px;
+}
+
+p {
+  font-size: 12px;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-weight: 500;
+  font-size: 12px;
+  color: $black;
+
+  &:hover {
+    font-family: "Roboto", "Helvetica", "sans-serif";
+    font-weight: 700;
+    font-size: 12px;
+    text-decoration: underline;
+    color: $purple;
+  }
+
+  &:active {
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-weight: 700;
+  font-size: 12px;
+  text-decoration: underline;
+  color: $purple;
+  }
+}
