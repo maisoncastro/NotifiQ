@@ -35,12 +35,12 @@ puts "Done!"
 
 puts "Creating Confirmations.."
 confirm_one = Confirmation.new(start_time: Time.now)
-confirm_one = two.id
+confirm_one.user_id = two.id
 confirm_one = saq_villeray
 confirm_one.save 
 
 confirm_two = Confirmation.new(start_time: Time.now)
-confirm_two =three.id
+confirm_two.user_id =three.id
 confirm_two = iga_lasalle
 confirm_two.save
 
