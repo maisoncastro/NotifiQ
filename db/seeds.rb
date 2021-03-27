@@ -1,8 +1,8 @@
 
 puts "Deleting database.."
+Confirmation.destroy_all
 User.destroy_all
 Store.destroy_all
-Confirmation.destroy_all
 
 puts "Creating Users.."
 
@@ -35,13 +35,13 @@ puts "Done!"
 
 puts "Creating Confirmations.."
 confirm_one = Confirmation.new(start_time: Time.now)
-confirm_one.customer_id = two
-confirm_one.store_id = saq_villeray
+confirm_one = two.id
+confirm_one = saq_villeray
 confirm_one.save 
 
 confirm_two = Confirmation.new(start_time: Time.now)
-confirm_two.customer_id =three
-confirm_two.store_id = iga_lasalle
+confirm_two =three.id
+confirm_two = iga_lasalle
 confirm_two.save
 
 puts "Done!"
