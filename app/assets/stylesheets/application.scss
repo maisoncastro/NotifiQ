@@ -29,7 +29,7 @@ h3 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 ul {
@@ -40,13 +40,13 @@ ul {
 a {
   font-family: "Roboto", "Helvetica", "sans-serif";
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   color: $black;
 
   &:hover {
     font-family: "Roboto", "Helvetica", "sans-serif";
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: underline;
     color: $purple;
   }
@@ -54,7 +54,7 @@ a {
   &:active {
   font-family: "Roboto", "Helvetica", "sans-serif";
   font-weight: 700;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: underline;
   color: $purple;
   }
