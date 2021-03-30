@@ -1,7 +1,13 @@
 <h1>Stores#show</h1>
 <p>Find me in app/views/stores/show.html.erb</p>
 
+  <div class="container">
+    <h3><%= @stores.name %></h3>
+    <p><%= @stores.address %></p>
+    <p><%= @stores.capacity %> </p>
     <div class="code">
         <%= @svg.html_safe %>
     </div>
+  </div>
+
 
