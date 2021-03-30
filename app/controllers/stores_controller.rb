@@ -33,6 +33,8 @@ class StoresController < ApplicationController
   end
 
   def show
+
+
     # @store = Store.last
     #   @code = @store.store_qrcode
 
