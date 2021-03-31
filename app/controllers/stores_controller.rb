@@ -45,17 +45,7 @@ class StoresController < ApplicationController
   end
 
   def show
-<<<<<<< HEAD
-    @store = Store.new
-
-    # @store = Store.last
-    #   @code = @store.store_qrcode
-
-    @store_qrcode = RQRCode::QRCode.new("https://notifiq.herokuapp.com/confirmations")
-
-=======
     @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/new")
->>>>>>> master
     @svg = @store_qrcode.as_svg(
       offset: 0,
       color: '000',
