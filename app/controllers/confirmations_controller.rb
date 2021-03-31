@@ -5,11 +5,12 @@ class ConfirmationsController < ApplicationController
 
   def create
     @confirmation = Confirmation.new(confirmation_params)
-    @confirmation.customer = current_customer_user
+    @confirmation.user = current_user
     @store = Store.find(params[:store_id])
     @confirmation.store = @store
     if @confirmation.save
-      redirect_to confirmations_index_path
+      ConfirmationMailer.confirmation_email(current_user).deliver
+      redirect_to confirmations_path, notice: 'Confirmation was successfully created.'
     else
       render :new
     end
