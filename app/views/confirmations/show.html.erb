@@ -12,16 +12,19 @@
 
 <div class="container-mobile">
 
-  <div class="code">
+  <div class="mobile-qrcode">
       <%= @svg.html_safe %>
   </div>
 
   <div class="box-container-show">
-    <p><%= @store.name %></p>
+    <div>
+      <h4><%= @store.name %></h4>
+      <p>Store description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
   </div>
 
   <div class="box-container-show">
+    <h4>A little more information</h4>
     <p><%= @store.message %></p>
   </div>
-
 </div>

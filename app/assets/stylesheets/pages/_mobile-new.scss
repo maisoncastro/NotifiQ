@@ -1,25 +1,4 @@
 
-.container-mobile {
-  max-width: 100%;
-  padding: 0;
-  padding-bottom: 16px;
-  margin: auto;
-  text-align: center;
-  overflow-x: hidden;
-
-  & h3 {
-    font-family: "Roboto";
-    font-size: 48px;
-    font-weight: 700;
-  }
-
-  & h4 {
-    color: $purple;
-    font-family: "Roboto", "sans-serif";
-    font-size: 18px;
-  }
-}
-
 .box-container {
   margin: auto;
   background-color: $white;
