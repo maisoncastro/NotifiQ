@@ -6,6 +6,19 @@
   background-color: #E4ECFF;
 }
 
+.mobile-title {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 24px 36px 24px;
+}
+
 .container-mobile {
   max-width: 100%;
   padding: 0;
