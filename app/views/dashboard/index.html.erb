@@ -1,6 +1,6 @@
 <div class="master-container">
     <div class="image">
-        <%= image_tag "Logo.png" %>
+        <%= image_tag "Logo.png", size: "80x80" %>
     </div>
     <div class="purpo">
         <%= link_to 'My Dashboard', dashboard_index_path, :id => 'hover-purp' %>
@@ -11,10 +11,14 @@
             <h1 class="main-header">Dashboard</h1>
             <p class="harry-p">Welcome Harry Potter to your store SAQ Jean-Talon!</p>
         </div>
+        
         <div class="mini-container">
 
         </div>
-        <div class="mini-container-2"></div>
+        <div class="mini-container-2">
+        
+        </div>
+
     </div>
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
