@@ -2,11 +2,11 @@
 <p>Find me in app/views/stores/store.html.erb</p>
 
 <%= current_business_user %>
-<div class="container"> 
+<div class="container">
   <%= simple_form_for [@user, @store] do |l| %>
-    <%= l.input :name %>
-    <%= l.input :address %>
-    <%= l.input :capacity %>
-    <%= l.submit 'Submit', :class => 'btn btn-primary' %>
+    <%= l.input :name, label: false, placeholder: "Name", input_html: { class: "form-input" } %>
+    <%= l.input :address, label: false, placeholder: "Address", input_html: { class: "form-input" } %>
+    <%= l.input :capacity, label: false, placeholder: "Capacity", input_html: { class: "form-input" } %>
+    <%= l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
   <% end %>
-</div> 
+</div>

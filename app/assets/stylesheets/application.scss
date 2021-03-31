@@ -11,7 +11,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+<<<<<<< HEAD
 @import "dashboard/index";
+=======
+>>>>>>> master
 
 h1 {
   text-decoration: underline;
@@ -30,7 +33,7 @@ h3 {
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 ul {
@@ -41,22 +44,30 @@ ul {
 a {
   font-family: "Roboto", "Helvetica", "sans-serif";
   font-weight: 500;
-  font-size: 12px;
+  font-size: 14px;
   color: $black;
 
   &:hover {
     font-family: "Roboto", "Helvetica", "sans-serif";
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: underline;
     color: $purple;
   }
 
   &:active {
+<<<<<<< HEAD
     font-family: "Roboto", "Helvetica", "sans-serif";
     font-weight: 700;
     font-size: 12px;
     text-decoration: underline;
     color: $purple;
+=======
+  font-family: "Roboto", "Helvetica", "sans-serif";
+  font-weight: 700;
+  font-size: 14px;
+  text-decoration: underline;
+  color: $purple;
+>>>>>>> master
   }
 }

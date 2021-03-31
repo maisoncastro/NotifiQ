@@ -1,2 +1,15 @@
 <h1>Confirmations#new</h1>
 <p>Find me in app/views/confirmations/new.html.erb</p>
+
+<%# simple_form_for [@user, @confirmation] do |l| %>
+  <%# l.input :start_time, input_html: { class: "form-select" } %>
+  <%# l.input :end_time, input_html: { class: "form-select" } %>
+  <%# l.input :position, label: false, placeholder: "Position", input_html: { class: "form-input" } %>
+  <%# l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
+<%# end %>
+
+<div class="container-mobile">
+  <%= button_to 'Accept', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
+  <br>
+  <%= button_to 'Decline', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
+</div>

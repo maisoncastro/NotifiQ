@@ -7,19 +7,19 @@
     <%= f.input :fname,
                 required: false,
                 autofocus: true,
-                label: 'First Name', 
+                label: 'First Name',
                 input_html: { autocomplete: "fname" }%>
     <%= f.input :lname,
                 required: false,
                 autofocus: true,
-                label: 'Last Name', 
+                label: 'Last Name',
                 input_html: { autocomplete: "lname" }%>
     <%= f.input :username,
                 required: true,
                 autofocus: true,
-                label: 'Username', 
+                label: 'Username',
                 error: 'Username is mandatory, please specify one',
-                input_html: { autocomplete: "username" }%>            
+                input_html: { autocomplete: "username" }%>
     <%= f.input :email,
                 required: true,
                 autofocus: true,
@@ -36,7 +36,7 @@
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up", :id => 'btn-purple' %>
   </div>
 <% end %>
 
