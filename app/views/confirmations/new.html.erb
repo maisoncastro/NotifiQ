@@ -1,5 +1,9 @@
 <body class="mobile-page">
 
+<div class="mobile-header">
+  <%= image_tag "logo.png", alt: "logo", :class => "mobile-logo" %>
+</div>
+
 <div class="container-mobile">
 
 <!--     <h1>Confirmations#new</h1>
@@ -28,8 +32,9 @@
       </div>
     </div>
     <br>
-    <%= button_to 'Accept', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
+    <%= button_to 'Accept', root_path, :class => 'btn-purple', :method => :get %>
     <br>
-    <%= button_to 'Decline', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
+    <%= button_to 'Decline', root_path, :class => 'btn-purple', :method => :get %>
 
 </div>
+
