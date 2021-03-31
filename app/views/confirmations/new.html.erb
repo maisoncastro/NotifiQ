@@ -1,15 +1,40 @@
-<h1>Confirmations#new</h1>
-<p>Find me in app/views/confirmations/new.html.erb</p>
+<body class="mobile-page">
 
-<%# simple_form_for [@user, @confirmation] do |l| %>
-  <%# l.input :start_time, input_html: { class: "form-select" } %>
-  <%# l.input :end_time, input_html: { class: "form-select" } %>
-  <%# l.input :position, label: false, placeholder: "Position", input_html: { class: "form-input" } %>
-  <%# l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
-<%# end %>
+<div class="mobile-header">
+  <%= image_tag "logo.png", alt: "logo", :class => "mobile-logo" %>
+</div>
 
 <div class="container-mobile">
-  <%= button_to 'Accept', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
-  <br>
-  <%= button_to 'Decline', root_path, :class => 'btn', :id => 'btn-purple', :method => :get %>
+
+<!--     <h1>Confirmations#new</h1>
+    <p>Find me in app/views/confirmations/new.html.erb</p> -->
+
+    <%# simple_form_for [@user, @confirmation] do |l| %>
+      <%# l.input :start_time, input_html: { class: "form-select" } %>
+      <%# l.input :end_time, input_html: { class: "form-select" } %>
+      <%# l.input :position, label: false, placeholder: "Position", input_html: { class: "form-input" } %>
+      <%# l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
+    <%# end %>
+
+    <div class="box-container">
+      <div class="mobile-box-text">
+        <h4>Approx. wait time</h4>
+        <h3>47</h3>
+        <h4>minutes</h4>
+      </div>
+    </div>
+
+    <div class="box-container">
+      <div class="mobile-box-text">
+        <h4>Number</h4>
+        <h3>23</h3>
+        <h4>in line</h4>
+      </div>
+    </div>
+    <br>
+    <%= button_to 'Accept', root_path, :class => 'btn-purple', :method => :get %>
+    <br>
+    <%= button_to 'Decline', root_path, :class => 'btn-purple', :method => :get %>
+
 </div>
+
