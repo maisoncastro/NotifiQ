@@ -1,0 +1,12 @@
+.box-container-show {
+  margin: auto;
+  background-color: $white;
+  width: 344px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  border: 2px solid red;
+}

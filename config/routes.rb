@@ -6,7 +6,6 @@ Rails.application.routes.draw do
     resources :confirmations, only: [:new, :create, :show, :index]
   end
 
-
   devise_for :customers, path: 'customers'
   devise_for :business_users, path: 'business_users'
 

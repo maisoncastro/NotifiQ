@@ -15,7 +15,7 @@
     <%# end %>
 
     <div class="box-container">
-      <div class="mobile-box-text">
+      <div>
         <h4>Approx. wait time</h4>
         <h3>47</h3>
         <h4>minutes</h4>
@@ -23,14 +23,14 @@
     </div>
 
     <div class="box-container">
-      <div class="mobile-box-text">
+      <div>
         <h4>Number</h4>
         <h3>23</h3>
         <h4>in line</h4>
       </div>
     </div>
     <br>
-    <%= button_to 'Accept', root_path, :class => 'btn-purple', :method => :get %>
+    <%= button_to 'Accept', 'http://localhost:3030/stores/1/confirmations/1', :class => 'btn-purple', :method => :get %>
     <br>
     <%= button_to 'Decline', root_path, :class => 'btn-purple', :method => :get %>
 
