@@ -53,9 +53,41 @@
 .purpo {
   margin-top: 22%;
   margin-left: 14%;
+  text-decoration: none !important;
+}
+
+.purpo > a:hover {
+  text-decoration: none !important;
 }
 
 .logout {
   margin-top: 48%;
   margin-left: 17.5%;
+  text-decoration: none !important;
 }
+
+.logout > a:hover {
+  text-decoration: none !important;
+}
+
+#hover-purp {
+  position: relative;
+}
+
+#hover-purp::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -33px;
+  width: 27px;
+  height: 12px;
+  background-color: $purple;
+  display: none;
+}
+
+#hover-purp:hover:before {
+  display: block;
+}
+// #hover-purp:hover {
+//   text-decoration: none !important;
+// }
