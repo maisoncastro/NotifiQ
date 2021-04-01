@@ -1,3 +1,6 @@
+@import "mobile-new";
+@import "mobile-show";
+
 .mobile-logo {
   width: 60px;
 }
@@ -6,8 +9,21 @@
   background-color: #E4ECFF;
 }
 
+.mobile-title {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 24px 36px 24px;
+}
+
 .container-mobile {
-  max-width: 100%;
+  width: 374px;
   padding: 0;
   padding-bottom: 16px;
   margin: auto;
@@ -27,15 +43,6 @@
   }
 }
 
-.box-container {
-  margin: auto;
-  background-color: $white;
-  width: 200px;
-  height: 200px;
-  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
+.mobile-qrcode {
+  padding-bottom: 36px;
 }
