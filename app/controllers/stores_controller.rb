@@ -45,7 +45,8 @@ class StoresController < ApplicationController
   end
 
   def show
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/stores/#{@store.id}/confirmations/new")
+    @store_qrcode = RQRCode::QRCode.new("/stores/#{@store.id}/confirmations/new")
+
     @svg = @store_qrcode.as_svg(
       offset: 0,
       color: '000',

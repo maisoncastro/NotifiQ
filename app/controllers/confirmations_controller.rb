@@ -18,6 +18,7 @@ class ConfirmationsController < ApplicationController
 
     @store_qrcode = RQRCode::QRCode.new(destroy_customer_session_path)
 
+
     @svg = @store_qrcode.as_svg(
       offset: 0,
       color: '000',
