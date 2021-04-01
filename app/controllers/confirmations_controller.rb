@@ -16,7 +16,7 @@ class ConfirmationsController < ApplicationController
     @confirmation = Confirmation.find(params[:id])
     @store = Store.find(params[:store_id])
 
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/customers/sign_out")
+    @store_qrcode = RQRCode::QRCode.new(destroy_customer_session_path)
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
