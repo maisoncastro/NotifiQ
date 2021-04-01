@@ -17,7 +17,7 @@
     <div class="box-container">
       <div>
         <h4>Approx. wait time</h4>
-        <h3>17</h3>
+        <h3>5</h3>
         <h4>minutes</h4>
       </div>
     </div>
@@ -25,13 +25,13 @@
     <div class="box-container">
       <div>
         <h4>Number</h4>
-        <h3>23</h3>
+        <h3>3</h3>
         <h4>in line</h4>
       </div>
     </div>
     <br>
 
-    <%= button_to 'Accept', '/stores/1/confirmations/1', :class => 'btn-purple', :method => :get %>
+    <%= button_to 'Accept', '/stores/1/confirmations/1', :method => :get, :class => 'btn-purple' %>
     <br>
     <%= button_to 'Decline', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>
 
