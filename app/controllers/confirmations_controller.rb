@@ -22,7 +22,7 @@ class ConfirmationsController < ApplicationController
   def index
     @confirmations = Confirmation.all
 
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/")
+    @store_qrcode = RQRCode::QRCode.new("https://notifiq.herokuapp.com/confirmations/")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
