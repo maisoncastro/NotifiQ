@@ -30,6 +30,12 @@
   text-align: center;
   overflow-x: hidden;
 
+  & h2 {
+    font-family: "Roboto";
+    font-size: 64px;
+    font-weight: 700;
+  }
+
   & h3 {
     font-family: "Roboto";
     font-size: 48px;
