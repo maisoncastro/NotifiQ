@@ -1,0 +1,119 @@
+.container-main-dash {
+  background-color: #f6f6fe;
+  position: absolute;
+  width: 1024px;
+  height: 882px;
+  left: 307px;
+  top: 81px;
+  border-radius: 25px;
+}
+
+.headz {
+  position: relative;
+  width: 195px;
+  height: 44px;
+  left: 10%;
+  top: 5%;
+}
+
+.mini-container {
+  background-color: white;
+  position: absolute;
+  width: 572px;
+  height: 280px;
+  left: 10%;
+  top: 20%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("img_analytics.png");
+}
+
+.mini-container-2 {
+  background-color: white;
+  position: absolute;
+  width: 572px;
+  height: 280px;
+  left: 10%;
+  top: 56%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("saq_location.jpg");
+}
+
+.purpo {
+  margin-top: 4%;
+  margin-left: 11%;
+  text-decoration: none !important;
+}
+
+.purpo > a:hover {
+  text-decoration: none !important;
+}
+
+.logout {
+  margin-top: 0%;
+  margin-left: 13.5%;
+  text-decoration: none !important;
+}
+
+.logout > a:hover {
+  text-decoration: none !important;
+}
+
+#hover-purp {
+  position: relative;
+}
+
+#hover-purp::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -33px;
+  width: 27px;
+  height: 12px;
+  background-color: $purple;
+  display: none;
+}
+
+#hover-purp:hover:before {
+  display: block;
+}
+
+#logz-out {
+  position: relative;
+}
+
+#logz-out::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -33px;
+  width: 27px;
+  height: 12px;
+  background-color: $purple;
+  display: none;
+}
+
+#logz-out:hover:before {
+  display: block;
+}
+// #hover-purp:hover {
+//   text-decoration: none !important;
+// }
+
+.image {
+  margin-top: 7%;
+  margin-left: 10.5%;
+}

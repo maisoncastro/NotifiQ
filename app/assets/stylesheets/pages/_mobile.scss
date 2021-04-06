@@ -1,0 +1,48 @@
+@import "mobile-new";
+@import "mobile-show";
+
+.mobile-logo {
+  width: 60px;
+}
+
+.mobile-page {
+  background-color: #E4ECFF;
+}
+
+.mobile-title {
+  font-family: "Roboto", "sans-serif";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 24px 36px 24px;
+}
+
+.container-mobile {
+  width: 374px;
+  padding: 0;
+  padding-bottom: 16px;
+  margin: auto;
+  text-align: center;
+  overflow-x: hidden;
+
+  & h3 {
+    font-family: "Roboto";
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  & h4 {
+    color: $purple;
+    font-family: "Roboto", "sans-serif";
+    font-size: 18px;
+  }
+}
+
+.mobile-qrcode {
+  padding-bottom: 36px;
+}

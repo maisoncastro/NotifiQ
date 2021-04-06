@@ -1,4 +1,3 @@
-
 puts "Deleting database.."
 Confirmation.destroy_all
 Store.destroy_all
