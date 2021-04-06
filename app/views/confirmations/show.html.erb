@@ -1,7 +1,45 @@
-<h1>Confirmations#show</h1>
+<!-- <h1>Confirmations#show</h1>
 <p>Find me in app/views/confirmations/show.html.erb</p>
 
 <h2><%= @confirmation.qrcode %></h2>
 <p><%= @confirmation.start_time %></p>
 <p><%= @confirmation.end_time %></p>
-<p><%= @confirmation.position %></p>
+<p><%= @confirmation.position %></p> -->
+
+<body class="mobile-page">
+
+  <%= render 'mobileheader' %>
+
+<div class="container-mobile">
+
+  <div class="mobile-qrcode">
+      <%= @svg.html_safe %>
+  </div>
+
+  <div class="box-container-show">
+    <div>
+      <h4><%= @store.name %></h4>
+      <p>Store description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+  </div>
+
+  <div class="box-container-show">
+    <h4>A little more information</h4>
+    <p><%= @store.message %></p>
+  </div>
+
+  <div class="d-flex justify-content-center">
+    <div class="box-info">
+      <h4>Approx. wait</h4>
+      <h3>5</h3>
+      <h4>minutes</h4>
+    </div>
+
+    <div class="box-info">
+      <h4>Number</h4>
+      <h3>3</h3>
+      <h4>in line</h4>
+    </div>
+  </div>
+
+</div>
