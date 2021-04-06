@@ -2,19 +2,6 @@ class ConfirmationsController < ApplicationController
   def index
     @confirmations = Confirmation.all
 
-<<<<<<< HEAD
-  def create
-    @confirmation = Confirmation.new(confirmation_params)
-    @confirmation.user = current_user
-    @store = Store.find(params[:store_id])
-    @confirmation.store = @store
-    if @confirmation.save
-      ConfirmationMailer.confirmation_email(current_user).deliver
-      redirect_to confirmations_path, notice: 'Confirmation was successfully created.'
-    else
-      render :new
-    end
-=======
     @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/confirmations/")
 
     @svg = @store_qrcode.as_svg(
@@ -23,7 +10,6 @@ class ConfirmationsController < ApplicationController
       shape_rendering: 'crispEdges',
       module_size: 4
     )
->>>>>>> master
   end
 
   def show
@@ -31,7 +17,6 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
 
     @store_qrcode = RQRCode::QRCode.new(destroy_customer_session_path)
-
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
