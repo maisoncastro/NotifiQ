@@ -1,3 +1,5 @@
+<%= stylesheet_pack_tag 'application' %>
+
 <h1>Stores#show</h1>
 <p>Find me in app/views/stores/show.html.erb</p>
 
@@ -5,6 +7,20 @@
   <h6> Address: <%= @store.address %></h6>
   <p>Capacity:<%= @store.capacity %></p>
 
+<<<<<<< HEAD
+    <div class="code">
+        <%= @svg.html_safe %>
+    </div>
+
+  <div id="map"
+         style="width: 100%; height: 300px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+  <!-- <p><%= @store.longitude %> </p>
+  <p><%= @store.latitude %></p> -->
+=======
 <div class="code">
     <%= @svg.html_safe %>
 </div>
+>>>>>>> 3fcce44c31c85bed7d708011d47bf00bd04e9c88
