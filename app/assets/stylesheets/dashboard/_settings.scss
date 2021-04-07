@@ -1,0 +1,80 @@
+.logout2 {
+  margin-top: 0%;
+  margin-left: 11%;
+  text-decoration: none !important;
+}
+
+.mini-container-settings {
+  background-color: white;
+  position: absolute;
+  width: 415px;
+  height: 258px;
+  left: 10%;
+  top: 15%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("img_analytics.png");
+}
+
+.mini-container-2-settings {
+  background-color: white;
+  position: absolute;
+  width: 415px;
+  height: 258px;
+  left: 53%;
+  top: 15%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("saq_location.jpg");
+}
+
+.container-main-dash-settings {
+  background-color: #f6f6fe;
+  position: absolute;
+  width: 1024px;
+  height: 882px;
+  left: 307px;
+  top: 81px;
+  border-radius: 25px;
+}
+
+.mini-container-3-settings {
+  background-color: white;
+  position: absolute;
+  width: 415px;
+  height: 258px;
+  left: 53%;
+  top: 47%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  h2 {
+    padding: 16px 16px 5px 16px;
+  }
+  p {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+.code-settings {
+  margin-left: 23%;
+  margin-top: 41%;
+}
