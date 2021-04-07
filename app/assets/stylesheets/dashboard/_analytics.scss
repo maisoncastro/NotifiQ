@@ -1,0 +1,55 @@
+.purpo2 {
+  margin-left: 11%;
+  margin-bottom: 26%;
+  text-decoration: none !important;
+}
+
+.purpo2 > a:hover {
+  text-decoration: none !important;
+}
+
+.mini-container-analytics {
+  background-color: white;
+  position: absolute;
+  width: 415px;
+  height: 258px;
+  left: 10%;
+  top: 15%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("img_analytics.png");
+}
+
+.mini-container-2-analytics {
+  background-color: white;
+  position: absolute;
+  width: 415px;
+  height: 258px;
+  left: 53%;
+  top: 15%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-image: asset-url("saq_location.jpg");
+}
+
+.container-main-dash-analytics {
+  background-color: #f6f6fe;
+  position: absolute;
+  width: 1024px;
+  height: 882px;
+  left: 307px;
+  top: 81px;
+  border-radius: 25px;
+}
