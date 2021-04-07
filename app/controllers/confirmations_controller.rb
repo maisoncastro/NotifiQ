@@ -18,7 +18,6 @@ class ConfirmationsController < ApplicationController
 
     @store_qrcode = RQRCode::QRCode.new(destroy_customer_session_path)
 
-
     @svg = @store_qrcode.as_svg(
       offset: 0,
       color: '000',
@@ -29,23 +28,25 @@ class ConfirmationsController < ApplicationController
 
   def new
     @confirmation = Confirmation.new
+    @store = Store.find(params[:store_id])
   end
 
   def create
-    @confirmation = Confirmation.new(confirmation_params)
+    @confirmation = Confirmation.new
     @store = Store.find(params[:store_id])
     @confirmation.store = @store
     @confirmation.user = current_user
     if @confirmation.save
-      redirect_to confirmations_index_path
+      ConfirmationMailer.confirmation_email(current_user).deliver_now
+
+      redirect_to confirmations_path
     else
+
       render :new
     end
   end
 
-  private
-
-  def confirmation_params
-    params.require(:confirmation).permit(:start_time, :end_time, :position, :qrcode)
-  end
+  # def confirmation_params
+  #   params.require(:confirmation).permit(:start_time, :end_time, :position, :qrcode)
+  # end
 end
