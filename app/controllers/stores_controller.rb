@@ -16,7 +16,10 @@ class StoresController < ApplicationController
   #   )
   # end
 
-  before_action :set_store, only: %i[show edit update]
+  before_action :set_store, only: %i[index show edit update]
+  def index
+    @stores = Store.all
+  end
 
   def new
     @store = Store.new
@@ -45,7 +48,7 @@ class StoresController < ApplicationController
   end
 
   def show
-    @store_qrcode = RQRCode::QRCode.new("/stores/#{@store.id}/confirmations/new")
+    @store_qrcode = RQRCode::QRCode.new("notifiq.herokuapp.com/stores/#{@store.id}/confirmations/new")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
@@ -53,6 +56,11 @@ class StoresController < ApplicationController
       shape_rendering: 'crispEdges',
       module_size: 11
     )
+    @markers = [{
+      lat: @store.latitude,
+      lng: @store.longitude
+      # infoWindow: render_to_string(partial: "info_window", locals: { store: @store })
+    }]
   end
 
   private
