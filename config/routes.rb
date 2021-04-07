@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root to: 'pages#home'
   get 'dashboard/index'
+  get 'dashboard/settings'
+  get 'dashboard/analytics'
 
   resources :stores, only: [:new, :create, :update, :edit, :show] do
     resources :confirmations, only: [:new, :create, :show, :index]
