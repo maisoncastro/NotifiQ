@@ -42,14 +42,15 @@
     </div>
   </div>
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nextinline" >
-    Next in line
-  </button>
 
-  <!-- Modal Next-->
-  <div class="modal fade" id="nextinline" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog-centered" role="document" id="modal-center">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nextinline">
+  Next in line
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="nextinline" tabindex="-1" role="dialog" aria-labelledby="nextinline" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
       <div>
 
         <div class="modal-dialog" role="document" id="modal-size">
@@ -66,9 +67,6 @@
                 <h4>See you in</h4>
                 <h2>5 mins</h2>
               </div>
-              <div class="modal-foot">
-                <button type="button" class="btn-purple" data-dismiss="modal">Show your QR code</button>
-              </div>
             </div>
         </div>
 
@@ -76,14 +74,15 @@
     </div>
   </div>
 
-  <!-- Button trigger modal -->
-  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yourturn" >
-    Your turn!
-  </button>
 
-  <!-- Modal Turn-->
-  <div class="modal fade" id="yourturn" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog-centered" role="document" id="modal-center">
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yourturn" >
+  Your turn!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="yourturn" tabindex="-1" role="dialog" aria-labelledby="yourturn" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
       <div>
 
         <div class="modal-dialog" role="document" id="modal-size">
@@ -97,10 +96,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" id="modal-show">
               <div class="modal-body">
-                <h2>🎉🎉🎉</h2>
-              </div>
-              <div class="modal-foot">
-                <button type="button" class="btn-purple" data-dismiss="modal">Show your QR code</button>
+                <h4>Welcome to <%= @store.name %></h4>
+                <h2>🎉</h2>
+                <h4>Show your QR code</h4>
               </div>
             </div>
         </div>

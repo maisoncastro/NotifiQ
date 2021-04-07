@@ -18,30 +18,3 @@
   margin-bottom: 20px;
   padding: 16px;
 }
-
-#modal-size {
-  width: 90vw;
-}
-
-#modal-top-alert {
-  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
-  border: none;
-  background-color: $purple;
-
-  & h4 {
-    color: white;
-    margin: 0;
-  }
-}
-
-#modal-show {
-  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
-  border: none;
-  background-color: $white;
-  margin-bottom: 20px;
-  padding: 16px;
-}
-
-#modal-center {
-  justify-content: center;
-}
