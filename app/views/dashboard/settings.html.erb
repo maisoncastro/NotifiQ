@@ -14,17 +14,26 @@
         <%= link_to 'My Settings', dashboard_settings_path, :id => 'hover-purp' %>
     </div>
 
-    <div class="container-main-dash">
+    <div class="container-main-dash-settings">
         <div class="headz">
             <h1 class="main-header">Settings</h1>
             <%# <p class="harry-p">Welcome Harry Potter to your store SAQ Jean-Talon!</p> %>
         </div>
         
-        <div class="mini-container">
+        <div class="mini-container-settings">
 
         </div>
-        <div class="mini-container-2">
+        <div class="mini-container-2-settings">
         
+        </div>
+
+        <div class="mini-container-3-settings">
+            <h2>Qr Code</h2>
+            <p>Lorem Ipsum Mothafuckas</p>
+        </div>
+
+        <div class="code-settings">
+            <%= @svg.html_safe %>
         </div>
 
     </div>
