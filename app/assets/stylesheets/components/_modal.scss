@@ -1,0 +1,26 @@
+#modal-size {
+  width: 90vw;
+}
+
+#modal-top-alert {
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: $purple;
+  border-radius: 10px;
+
+  & h4 {
+    color: white;
+    margin: 0;
+  }
+}
+
+#modal-show {
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+  border: none;
+  background-color: $white;
+  padding: 16px;
+}
+
+.modal-backdrop {
+  background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(125,88,254,1) 100%) !important;
+}
