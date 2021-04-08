@@ -22,7 +22,7 @@ saq.save!
 
 puts "Creating Stores.."
 
-saq_express = Store.new(name: "Saq Express", address: "954, boulevard Decarie, Montreal, H4L 3M4", capacity: "10")
+saq_express = Store.new(name: "Saq Express", address: "954 Decarie", capacity: "10")
 saq_express.user = saq
 saq_express.save!
 
