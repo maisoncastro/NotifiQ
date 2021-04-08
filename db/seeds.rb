@@ -22,15 +22,15 @@ saq.save!
 
 puts "Creating Stores.."
 
-saq_express = Store.new(name: "Saq Express", address: "954 Decarie", capacity: "10")
+saq_express = Store.new(name: "Saq Express", address: "954 Decarie montreal quebec", capacity: "10")
 saq_express.user = saq
 saq_express.save!
 
-sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri", capacity: "10")
+sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri montreal quebec", capacity: "10")
 sqdc_berri.user = sqdc
 sqdc_berri.save
 
-iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle", capacity: "10")
+iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle montreal quebec", capacity: "10")
 iga_lasalle.user = iga
 iga_lasalle.save
 
