@@ -32,8 +32,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'rqrcode'
-gem 'figaro'
 gem 'geocoder'
+gem 'figaro'
 
 group :development, :test do
   gem 'pry-byebug'
