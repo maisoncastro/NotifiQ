@@ -18,17 +18,4 @@ window.onload = function() {
   fetchWeatherByCoordinates('-73.6816067', '45.5133291');
 }
 
-// // searchLocation.addEventListener("click", (locationEvent) => {
-// //   locationEvent.preventDefault();
-//   navigator.geolocation.getCurrentPosition((dataLocation) => {
-//     const latitude = dataLocation.coords.latitude;
-//     const longitude = dataLocation.coords.longitude;
-
-//     if (longitude && latitude) {
-//       infos.classList.add("weather-container");
-//       fetchWeatherByCoordinates(longitude, latitude);
-//     }
-//   });
-// // });
-
 export { fetchWeatherByCoordinates };
