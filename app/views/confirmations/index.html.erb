@@ -1,10 +1,13 @@
 <h1>Confirmations#index</h1>
 
-<% @confirmations.each do |confirmation| %>
+
+<% @user_confirmations.each do |confirmation| %>
 <div class="column">
   <p>Confirmation <%=confirmation.id %> </p>
  </div>
 <% end %>
+
+
 
 <%# <h1>H1 font family test</h1>
 <h2>H2 font family test</h2>
@@ -16,6 +19,6 @@
 <%# </ul>  %>
 
 
-<div class="code">
+<%# <div class="code">
     <%= @svg.html_safe %>
-</div>
+<%# </div> %>
