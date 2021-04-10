@@ -4,9 +4,6 @@ const weatherapp = () => {
     const lat = weatherDiv.dataset.latitude;
     const long = weatherDiv.dataset.longitude;
 
-  // const fetchWeatherByCoordinates = (long, lat) => {
-
-
     const apiKey = '69690bb66a4000f12020a1edcc42b638';
     const locationUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
     fetch(locationUrl)
@@ -15,17 +12,31 @@ const weatherapp = () => {
         console.log(data);
         showWeather(data);
       });
-  // };
 };
 
 function showWeather( input ) {
   const celcius = Math.round(parseFloat(input.main.temp)-273.15);
-  const infos = document.querySelector("#description");
-  infos.infoHTML = "";
+  const weatherInfo = document.querySelector("#info");
+  const weatherCity = document.getElementById('city');
+  const weatherIcon = document.querySelector("#weather-icon");
 
-  document.getElementById('info').innerHTML = `${input.weather[0].description}, ${celcius}&deg, ${input.name}`;
-  const infoHTML = `<p class="temperature"><img src="http://openweathermap.org/img/wn/${input.weather[0].icon}.png" alt="weather icon"></p>`;
-  infos.insertAdjacentHTML('beforeend', infoHTML);
+  weatherInfo.infoHTML = "";
+  weatherCity.infoHTML = "";
+  weatherIcon.infoHTML = "";
+
+  // document.getElementById('info').innerHTML = `${celcius}&deg`;
+  // document.getElementById('info').innerHTML = `${input.weather[0].description}`;
+
+  const infoHTML = `<p>${celcius}&deg</p><p>${input.weather[0].description}</p>`;
+  weatherInfo.insertAdjacentHTML('beforeend', infoHTML);
+
+  const cityHTML = `<h2>${input.name}</h2>`;
+  weatherCity.insertAdjacentHTML('beforeend', cityHTML);
+
+  // document.getElementById('city').innerHTML = `${input.name}`;
+
+  const iconHTML = `<p class="temperature"><img src="http://openweathermap.org/img/wn/${input.weather[0].icon}.png" alt="weather icon"></p>`;
+  weatherIcon.insertAdjacentHTML('beforeend', iconHTML);
 };
 
 // window.onload = function() {
