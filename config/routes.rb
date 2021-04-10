@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'dashboard/analytics'
 
   resources :stores, only: [:new, :create, :update, :edit, :show] do
-    resources :confirmations, only: [:new, :create, :show]
+    resources :confirmations, only: [:new, :create, :show, :edit]
   end
 
   resources :confirmations, only: [:index]
