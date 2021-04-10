@@ -1,0 +1,30 @@
+
+.container-map{
+  margin: 0;
+}
+
+#blur-img{
+  // background-image: asset-url("4058271.jpeg");
+  // background-size: contain;
+  // background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  margin-top: 0;
+  border: 2px solid red;
+  img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+  }
+}
+
+.code{
+  background-color: $body-bg;
+  border: 1px solid rgba(0,0,0,-1);
+  border-radius: 8px;
+  box-shadow: 1px 3px 10px rgba(0,0,0,-1);
+  position: absolute;
+  left: 125px;
+  top: 105px;
+}
