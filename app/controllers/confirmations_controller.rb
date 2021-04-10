@@ -26,6 +26,11 @@ class ConfirmationsController < ApplicationController
       shape_rendering: 'crispEdges',
       module_size: 4
     )
+    @markers = [{
+      lat: @store.latitude,
+      lng: @store.longitude
+      # infoWindow: render_to_string(partial: "info_window", locals: { store: @store })
+    }]
   end
 
   def new

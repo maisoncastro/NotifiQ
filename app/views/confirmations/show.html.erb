@@ -1,14 +1,6 @@
-<!-- <h1>Confirmations#show</h1>
-<p>Find me in app/views/confirmations/show.html.erb</p>
-
-<h2><%= @confirmation.qrcode %></h2>
-<p><%= @confirmation.start_time %></p>
-<p><%= @confirmation.end_time %></p>
-<p><%= @confirmation.position %></p> -->
 
 <body class="mobile-page">
-
-  <%= render 'mobileheader' %>
+<%= render 'mobileheader' %>
 
 <div class="container-mobile">
 
@@ -43,6 +35,13 @@
     </div>
   </div>
 
+  <div class="box-container-show">
+    <div id="map"
+         style="width: 100%; height: 220px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+  </div>
 
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nextinline">
@@ -109,3 +108,5 @@
   </div>
 
 </div>
+
+
