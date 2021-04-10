@@ -27,9 +27,10 @@
 
         </div>
 
-        <div class="weather-container">
+        <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores[0].latitude %>" data-longitude="<%= @business_stores[0].longitude %>">
           <div id="description">
-
+          </div>
+          <div id="info">
           </div>
         </div>
 
@@ -38,3 +39,5 @@
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
 </div>
+
+

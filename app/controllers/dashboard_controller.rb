@@ -1,11 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @stores = Store.all
-    raise
-    @markers = [{
-      lat: @store.latitude,
-      lng: @store.longitude
-    }]
+    @business_stores = Store.where(user_id: current_user)
   end
 
   def settings

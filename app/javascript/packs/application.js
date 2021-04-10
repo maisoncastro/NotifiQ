@@ -26,7 +26,7 @@ import "bootstrap";
 import "mapbox-gl/dist/mapbox-gl.css";
 // internal imports
 import { initMapbox } from '../plugins/init_mapbox';
-import { fetchWeatherByCoordinates } from '../packs/weather';
+import { weatherapp } from '../packs/weather';
 
 
 // Internal imports, e.g:
@@ -36,5 +36,5 @@ document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  fetchWeatherByCoordinates('-73.6816067', '45.5133291');
+  weatherapp();
 });
