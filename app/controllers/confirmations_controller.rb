@@ -13,7 +13,7 @@ class ConfirmationsController < ApplicationController
   def show
     @confirmation = Confirmation.find(params[:id])
     @store = Store.find(params[:store_id])
-    completed_confirmations = @store.confirmations.select { |confirmation| confirmation.completed }
+    completed_confirmations = @store.confirmations.select(&:completed)
     @current_position = @confirmation.position - completed_confirmations.count
     @time = Time.new + (10 * @current_position)
 
@@ -39,7 +39,7 @@ class ConfirmationsController < ApplicationController
   def new
     @confirmation = Confirmation.new
     @store = Store.find(params[:store_id])
-    pending_confirmations = @store.confirmations.reject { |confirmation| confirmation.completed }
+    pending_confirmations = @store.confirmations.reject(&:completed)
     @current_position = pending_confirmations.count
     @average_wait_time = 10 * @current_position
 
