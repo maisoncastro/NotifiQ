@@ -1,27 +1,30 @@
 <%= stylesheet_pack_tag 'application' %>
 <div class="container-map">
   <div class="container-store">
-    <div class="row">
+    <div class="bg-img" id="blur-img">
+    <!-- <div class="row">
       <div class="col">
-        <h2><%= @store.name %></h2>
-        <h6> Address: <%= @store.address %></h6>
-        <p>Capacity:<%= @store.capacity %></p>
+        <div class="store-info">
+          <h2><%= @store.name %></h2>
+          <h6> Address: <%= @store.address %></h6>
+          <p>Capacity:<%= @store.capacity %></p>
+        </div>
       </div>
-    </div>
-    <div class="row">
+    </div> -->
+    <div class="row d-flex justify-content ">
       <div class="code">
           <%= @svg.html_safe %>
       </div>
     </div>
-  <div class="container-geo">
-    <div class="row">
-      <div id="map"
-            style="width: 50%; height: 300px;"
-             data-markers="<%= @markers.to_json %>"
-             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <!-- <div class="container-geo">
+      <div class="row">
+        <div id="map"
+              style="width: 50%; height: 300px;"
+               data-markers="<%= @markers.to_json %>"
+               data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
       </div>
-    </div>
-  </div>
+    </div> -->
   </div>
 
 </div>
