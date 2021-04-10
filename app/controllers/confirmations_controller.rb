@@ -18,7 +18,7 @@ class ConfirmationsController < ApplicationController
     @time = Time.new + (10 * @current_position)
 
     @url = "stores/#{@store.id}/confirmations/#{@confirmation.id}/edit"
-    @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/#{@url}")
+    @store_qrcode = RQRCode::QRCode.new("http://notifiq.herokuapp.com/#{@url}")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
