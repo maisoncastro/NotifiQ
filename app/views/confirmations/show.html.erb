@@ -31,13 +31,14 @@
   <div class="d-flex justify-content-center">
     <div class="box-info">
       <h4>Approx. wait</h4>
-      <h3>5</h3>
+      <h3><%= @current_position*10 %></h3>
+    
       <h4>minutes</h4>
     </div>
 
     <div class="box-info">
-      <h4>Number</h4>
-      <h3>3</h3>
+      <h4>Your position</h4>
+      <h3> <%= @current_position %></h3>
       <h4>in line</h4>
     </div>
   </div>
