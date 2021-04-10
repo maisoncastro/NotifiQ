@@ -48,13 +48,14 @@ class StoresController < ApplicationController
   end
 
   def show
-    @store_qrcode = RQRCode::QRCode.new("notifiq.herokuapp.com/stores/#{@store.id}/confirmations/new")
+    @url = "stores/#{@store.id}/confirmations/new"
+    @store_qrcode = RQRCode::QRCode.new("http://notifiq.herokuapp.com/#{@url}")
 
     @svg = @store_qrcode.as_svg(
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
-      module_size: 11
+      module_size: 3.5
     )
     @markers = [{
       lat: @store.latitude,
