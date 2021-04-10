@@ -17,14 +17,6 @@ class ConfirmationsController < ApplicationController
     @current_position = @confirmation.position - completed_confirmations.count
     @time = Time.new + (10 * @current_position)
 
-    # @store_qrcode = RQRCode::QRCode.new(destroy_customer_session_path)
-    # @svg = @store_qrcode.as_svg(
-    #   offset: 0,
-    #   color: '000',
-    #   shape_rendering: 'crispEdges',
-    #   module_size: 4
-    # )
-
     @url = "stores/#{@store.id}/confirmations/#{@confirmation.id}/edit"
     @store_qrcode = RQRCode::QRCode.new("http://localhost:3030/#{@url}")
 
@@ -42,8 +34,6 @@ class ConfirmationsController < ApplicationController
     pending_confirmations = @store.confirmations.reject(&:completed)
     @current_position = pending_confirmations.count
     @average_wait_time = 10 * @current_position
-
-    # raise
   end
 
   def create
@@ -51,7 +41,6 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
     @confirmation.store = @store
     @confirmation.user = current_user
-    # @store.increment(:customer_count)
     @confirmation.position = @store.confirmations.count + 1
     if @confirmation.save!
       ConfirmationMailer.confirmation_email(current_user).deliver_now
