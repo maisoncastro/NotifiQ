@@ -30,7 +30,7 @@ function showWeather( input ) {
   const infoHTML = `<p>${celcius}&deg</p><p>${input.weather[0].description}</p>`;
   weatherInfo.insertAdjacentHTML('beforeend', infoHTML);
 
-  const cityHTML = `<h2>${input.name}</h2>`;
+  const cityHTML = `<h2>${input.name}, ${input.sys.country}</h2>`;
   weatherCity.insertAdjacentHTML('beforeend', cityHTML);
 
   // document.getElementById('city').innerHTML = `${input.name}`;

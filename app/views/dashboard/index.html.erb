@@ -27,18 +27,26 @@
 
         </div>
 
-        <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores[0].latitude %>" data-longitude="<%= @business_stores[0].longitude %>">
-          <div class="d-flex">
-              <div id="weather-icon">
-              </div>
-              <div id="info">
-              </div>
-          </div>
-          <div id="city">
-          </div>
-        </div>
 
-    </div>
+          <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores[0].latitude %>" data-longitude="<%= @business_stores[0].longitude %>">
+            <div class="weather-container-info">
+              <div class="d-flex align-items-center">
+
+                  <div id="weather-icon">
+                  </div>
+
+                  <div id="info">
+                  </div>
+
+              </div>
+
+                  <div id="city">
+                  </div>
+              </div>
+            </div>
+          </div>
+
+
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
