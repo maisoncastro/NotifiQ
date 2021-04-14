@@ -21,17 +21,20 @@
         </div>
 
         <div class="mini-container-analytics">
+            <h2>Average Customers Last 2 Days</h2>
+                <p>21</p>
 
         </div>
-        <div class="mini-container-2-analytics">
+        <div id="mini-container-2-analytics" class="mini-container-2-analytics">
 
         </div>
 
         <div class="mini-container-3-analytics">
-
+            <h2>Current Average Waiting Time</h2>
+                <p>13 mins</p>
         </div>
 
-        <div class="mini-container-4-analytics">
+        <div id="mini-container-4-analytics" class="mini-container-4-analytics">
 
         </div>
 
@@ -40,3 +43,87 @@
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
 </div>
+
+<%# This is script for Average Customers %>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('mini-container-2-analytics', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Average Customers Last Week'
+            },
+            xAxis: {
+                categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+            },
+            yAxis: {
+                title: {
+                    text: 'Customers'
+                }
+            },
+            series: [{
+                name: 'Accepted',
+                data: [10, 20, 14, 12, 30]
+            }, {
+                name: 'Declined',
+                data: [5, 17, 30, 20, 14]
+            }]
+        });
+    });
+</script>
+
+<%# This is script for Average Time %>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+        const chart = Highcharts.chart('mini-container-4-analytics', {
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Average Wait Time Last Week'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f} mins</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: 'mins'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} mins'
+            }
+        }
+    },
+    series: [{
+        name: 'Average Wait Time',
+        colorByPoint: true,
+        data: [{
+            name: 'Monday',
+            y: 12.41
+        }, {
+            name: 'Tuesday',
+            y: 11.84
+        }, {
+            name: 'Wednesday',
+            y: 9.85
+        }, {
+            name: 'Thursday',
+            y: 2.85
+        }, {
+            name: 'Friday',
+            y: 7.85
+        }]
+    }]
+});
+});
+</script>

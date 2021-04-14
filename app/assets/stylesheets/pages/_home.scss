@@ -1,1 +1,25 @@
 // Specific CSS for your home-page
+.login-home {
+  position: absolute;
+  left: 38%;
+  top: 29%;
+  text-align: center;
+  width: 415px;
+  height: 258px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+  background-color: $light-purple;
+}
+
+.button1 {
+  padding-top: 20%;
+  padding-bottom: 37px;
+}
+
+.button2 {
+}

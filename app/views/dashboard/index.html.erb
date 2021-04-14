@@ -1,3 +1,4 @@
+
 <div class="master-container">
     <div class="image">
         <%= image_tag "logo.png", size: "80x80" %>
@@ -59,6 +60,7 @@
             <%= link_to 'Add your store', new_store_path, class: 'btn-purple' %>
           </div>
         </div>
+
         <% else %>
         <div class="client-container">
           <div class="client-container-info">
@@ -82,15 +84,15 @@
 
                 <div id="city">
                 </div>
-            </div>
+
+
           </div>
         </div>
         <% end %>
-    </div>
 
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
-</div>
 
+</div>
 
