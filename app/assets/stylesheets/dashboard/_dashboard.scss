@@ -123,6 +123,24 @@
   margin: auto;
 }
 
+.client-container {
+  display: flex;
+  background-color: white;
+  position: absolute;
+  width: 224px;
+  height: 224px;
+  left: 70%;
+  top: 20%;
+  border-radius: 25px;
+  box-shadow: 0px 8px 40px
+    rgba(
+      112.000000923872,
+      144.00000661611557,
+      176.00000470876694,
+      0.20000000298023224
+    );
+}
+
 .weather-container {
   display: flex;
   background-color: white;
