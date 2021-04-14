@@ -1,6 +1,6 @@
 class DashboardController < ApplicationController
   def index
-    @business_stores = Store.where(user_id: current_user)
+    @business_stores = Store.find_by(user_id: current_user)
   end
 
   def settings

@@ -3,6 +3,7 @@ const weatherapp = () => {
 
     const lat = weatherDiv.dataset.latitude;
     const long = weatherDiv.dataset.longitude;
+    console.log(lat);
 
     const apiKey = process.env.WEATHER_API_KEY;
 
