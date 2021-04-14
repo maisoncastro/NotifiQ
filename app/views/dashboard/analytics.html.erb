@@ -75,29 +75,37 @@ document.addEventListener('DOMContentLoaded', function () {
 <script>
 document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('mini-container-4-analytics', {
-            chart: {
-                type: 'pie'
-            },
-            title: {
-                text: 'Customer by Time of Day'
-            },
-            plotOptions: {
-                pie: {
-                    allowPointSelect: true,
-                    cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        format: '<b>{series.name}</b>: {point.percentage:.1f} %'
-                    }
-                }
-            },
-            yAxis: {
-                title: {
-                    text: 'Customers'
-                }
-            },
-            series: [{
-            data: [{
+    chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+    },
+    title: {
+        text: 'Browser market shares in January, 2018'
+    },
+    tooltip: {
+        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+    },
+    accessibility: {
+        point: {
+            valueSuffix: '%'
+        }
+    },
+    plotOptions: {
+        pie: {
+            allowPointSelect: true,
+            cursor: 'pointer',
+            dataLabels: {
+                enabled: true,
+                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+            }
+        }
+    },
+    series: [{
+        name: 'Average Customers per Day',
+        colorByPoint: true,
+        data: [{
             name: 'Chrome',
             y: 61.41
         }, {
@@ -107,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
             name: 'Firefox',
             y: 10.85
         }]
-        });
-    });
+    }]
+});
+});
 </script>
