@@ -37,32 +37,3 @@
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
 </div>
-
-
-    <script>
-document.addEventListener('DOMContentLoaded', function () {
-        const chart = Highcharts.chart('graph', {
-            chart: {
-                type: 'bar'
-            },
-            title: {
-                text: 'Fruit Consumption'
-            },
-            xAxis: {
-                categories: ['Apples', 'Bananas', 'Oranges']
-            },
-            yAxis: {
-                title: {
-                    text: 'Fruit eaten'
-                }
-            },
-            series: [{
-                name: 'Jane',
-                data: [1, 0, 4]
-            }, {
-                name: 'John',
-                data: [5, 7, 3]
-            }]
-        });
-    });
-</script>
