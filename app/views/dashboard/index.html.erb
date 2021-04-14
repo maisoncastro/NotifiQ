@@ -1,3 +1,4 @@
+
 <div class="master-container">
     <div class="image">
         <%= image_tag "logo.png", size: "80x80" %>
@@ -20,7 +21,7 @@
             <p class="harry-p">Welcome Harry Potter to your store SAQ Jean-Talon!</p>
         </div>
 
-        <div class="mini-container">
+        <div id="graph" class="graph">
 
         </div>
         <div class="mini-container-2">
@@ -30,8 +31,8 @@
         <div class="weather-container">
 
         </div>
-
     </div>
+
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
