@@ -1,6 +1,7 @@
 class ConfirmationsController < ApplicationController
   def index
     confirmations = Confirmation.all
+    @stores = Store.all
     @user_confirmations = confirmations.select { |confirmation| confirmation.user_id == current_user.id }
   end
 

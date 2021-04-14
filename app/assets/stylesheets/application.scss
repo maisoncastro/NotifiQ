@@ -13,11 +13,12 @@
 @import "pages/index";
 @import "dashboard/index";
 @import "stores/index";
-
+@import "confirmations/index";
 h1 {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 800;
   font-size: 36px;
+
 }
 
 h2 {
@@ -60,4 +61,10 @@ a {
     // text-decoration: underline;
     color: $purple;
   }
+}
+
+.purple-page {
+  background-color: #f6f6fe;
+  min-height: 100vh;
+
 }

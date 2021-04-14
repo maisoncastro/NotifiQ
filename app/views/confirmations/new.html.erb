@@ -1,8 +1,8 @@
 <body class="mobile-page">
 
   <%= render 'mobileheader' %>
-
 <div class="container-mobile">
+<h1><%= @store.name %></h1>
 
 <!--     <h1>Confirmations#new</h1>
     <p>Find me in app/views/confirmations/new.html.erb</p> -->
@@ -15,6 +15,7 @@
     <%# end %>
 
     <div class="box-container">
+
       <div>
         <h4>Approx. wait time</h4>
         <h3> <%= @average_wait_time %> </h3>

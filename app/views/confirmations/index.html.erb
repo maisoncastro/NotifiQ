@@ -1,12 +1,32 @@
-<h1>Confirmations#index</h1>
 
 
-<% @user_confirmations.each do |confirmation| %>
-<div class="column">
-  <p>Confirmation <%=confirmation.id %> </p>
- </div>
-<% end %>
+<div class="purple-page">
+  <h1 class="text-center ">Confirmations</h1>
 
+  <div class="container">
+    <div class="card-container">
+      <% @user_confirmations.each do |confirmation| %>
+        <div class="card">
+          <p>Store Name <%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
+          <p>Position in line <%= confirmation.position %> </p>
+         </div>
+      <% end %>
+    </div>
+  </div>
+
+  <h1 class="text-center">Stores</h1>
+
+  <div class="container">
+    <div class="card-container">
+      <% @stores.each do |store| %>
+        <div class="card">
+          <p>Store Name <%=link_to store.name, new_store_confirmation_path(store_id: store.id) %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
 
 
 <%# <h1>H1 font family test</h1>
@@ -14,7 +34,7 @@
 <h3>H3 font family test</h3>
 <p>p paragraph font family test</p>
 <ul>
-  <li><%= link_to "Links", root_path</li>  
+  <li><%= link_to "Links", root_path</li>
   <%# <li><%= link_to "Links", root_path</li>  %>
 <%# </ul>  %>
 
