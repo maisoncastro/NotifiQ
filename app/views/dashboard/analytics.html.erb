@@ -21,8 +21,8 @@
         </div>
 
         <div class="mini-container-analytics">
-            <h2>Average Guests</h2>
-                <p>312 per day</p>
+            <h2>Average Customers | Last Week</h2>
+                <p>312 customers</p>
 
         </div>
         <div id="mini-container-2-analytics" class="mini-container-2-analytics">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="mini-container-3-analytics">
-            <h2>Average Time</h2>
+            <h2>Average Waiting Time | Last Week</h2>
                 <p>13 mins</p>
         </div>
 
@@ -44,7 +44,8 @@
     </div>
 </div>
 
-    <script>
+<%# This is script for Average Customers %>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('mini-container-2-analytics', {
             chart: {
@@ -72,6 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 </script>
 
+<%# This is script for Average Time %>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
         const chart = Highcharts.chart('mini-container-4-analytics', {
@@ -82,14 +84,14 @@ document.addEventListener('DOMContentLoaded', function () {
         type: 'pie'
     },
     title: {
-        text: 'Browser market shares in January, 2018'
+        text: 'Average Wait Time per Week'
     },
     tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        pointFormat: '{series.name}: <b>{point.percentage:.1f} mins</b>'
     },
     accessibility: {
         point: {
-            valueSuffix: '%'
+            valueSuffix: 'mins'
         }
     },
     plotOptions: {
@@ -98,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
             cursor: 'pointer',
             dataLabels: {
                 enabled: true,
-                format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+                format: '<b>{point.name}</b>: {point.percentage:.1f} mins'
             }
         }
     },
@@ -106,13 +108,19 @@ document.addEventListener('DOMContentLoaded', function () {
         name: 'Average Customers per Day',
         colorByPoint: true,
         data: [{
-            name: 'Chrome',
+            name: 'Monday',
             y: 61.41
         }, {
-            name: 'Internet Explorer',
+            name: 'Tuesday',
             y: 11.84
         }, {
-            name: 'Firefox',
+            name: 'Wednesday',
+            y: 10.85
+        }, {
+            name: 'Thursday',
+            y: 10.85
+        }, {
+            name: 'Friday',
             y: 10.85
         }]
     }]
