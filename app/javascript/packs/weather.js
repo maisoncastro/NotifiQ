@@ -4,12 +4,12 @@ const weatherapp = () => {
     const lat = weatherDiv.dataset.latitude;
     const long = weatherDiv.dataset.longitude;
 
-    const apiKey = '69690bb66a4000f12020a1edcc42b638';
+    const apiKey = process.env.WEATHER_API_KEY;
+
     const locationUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
     fetch(locationUrl)
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
         showWeather(data);
       });
 };
