@@ -1,18 +1,20 @@
 const weatherapp = () => {
     const weatherDiv = document.querySelector('#weather-container');
 
-    const lat = weatherDiv.dataset.latitude;
-    const long = weatherDiv.dataset.longitude;
-    console.log(lat);
+    if (weatherDiv) {
+      const lat = weatherDiv.dataset.latitude;
+      const long = weatherDiv.dataset.longitude;
 
-    const apiKey = process.env.WEATHER_API_KEY;
+      const apiKey = process.env.WEATHER_API_KEY;
 
-    const locationUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
-    fetch(locationUrl)
-      .then(response => response.json())
-      .then((data) => {
-        showWeather(data);
-      });
+      const locationUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
+      fetch(locationUrl)
+        .then(response => response.json())
+        .then((data) => {
+          showWeather(data);
+          console.log(data);
+        });
+    }
 };
 
 function showWeather( input ) {
@@ -25,23 +27,14 @@ function showWeather( input ) {
   weatherCity.infoHTML = "";
   weatherIcon.infoHTML = "";
 
-  // document.getElementById('info').innerHTML = `${celcius}&deg`;
-  // document.getElementById('info').innerHTML = `${input.weather[0].description}`;
-
   const infoHTML = `<p>${celcius}&deg</p><p>${input.weather[0].description}</p>`;
   weatherInfo.insertAdjacentHTML('beforeend', infoHTML);
 
   const cityHTML = `<h2>${input.name}, ${input.sys.country}</h2>`;
   weatherCity.insertAdjacentHTML('beforeend', cityHTML);
 
-  // document.getElementById('city').innerHTML = `${input.name}`;
-
   const iconHTML = `<p class="temperature"><img src="http://openweathermap.org/img/wn/${input.weather[0].icon}.png" alt="weather icon"></p>`;
   weatherIcon.insertAdjacentHTML('beforeend', iconHTML);
 };
-
-// window.onload = function() {
-//   fetchWeatherByCoordinates('-73.6816067', '45.5133291');
-// }
 
 export { weatherapp };
