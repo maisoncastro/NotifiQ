@@ -21,8 +21,8 @@
         </div>
 
         <div class="mini-container-analytics">
-            <h2>Average Customers | Last Week</h2>
-                <p>312 customers</p>
+            <h2>Average Customers Last 2 Days</h2>
+                <p>21</p>
 
         </div>
         <div id="mini-container-2-analytics" class="mini-container-2-analytics">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="mini-container-3-analytics">
-            <h2>Average Waiting Time | Last Week</h2>
+            <h2>Current Average Waiting Time</h2>
                 <p>13 mins</p>
         </div>
 
@@ -52,10 +52,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 type: 'bar'
             },
             title: {
-                text: 'Average Customers'
+                text: 'Average Customers Last Week'
             },
             xAxis: {
-                categories: ['Monday', 'Tuesday', 'Wednesday']
+                categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
             },
             yAxis: {
                 title: {
@@ -64,10 +64,10 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             series: [{
                 name: 'Accepted',
-                data: [10, 20, 14]
+                data: [10, 20, 14, 12, 30]
             }, {
                 name: 'Declined',
-                data: [5, 17, 30]
+                data: [5, 17, 30, 20, 14]
             }]
         });
     });
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
         type: 'pie'
     },
     title: {
-        text: 'Average Wait Time per Week'
+        text: 'Average Wait Time Last Week'
     },
     tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f} mins</b>'
@@ -105,23 +105,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     },
     series: [{
-        name: 'Average Customers per Day',
+        name: 'Average Wait Time',
         colorByPoint: true,
         data: [{
             name: 'Monday',
-            y: 61.41
+            y: 12.41
         }, {
             name: 'Tuesday',
             y: 11.84
         }, {
             name: 'Wednesday',
-            y: 10.85
+            y: 9.85
         }, {
             name: 'Thursday',
-            y: 10.85
+            y: 2.85
         }, {
             name: 'Friday',
-            y: 10.85
+            y: 7.85
         }]
     }]
 });
