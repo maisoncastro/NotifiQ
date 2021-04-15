@@ -1,41 +1,26 @@
-<body class="mobile-page">
-
-  <%= render 'mobileheader' %>
 
 <div class="container-mobile">
+  <h1><%= @store.name %></h1>
 
-<!--     <h1>Confirmations#new</h1>
-    <p>Find me in app/views/confirmations/new.html.erb</p> -->
+  <div class="box-container">
 
-    <%# simple_form_for [@user, @confirmation] do |l| %>
-      <%# l.input :start_time, input_html: { class: "form-select" } %>
-      <%# l.input :end_time, input_html: { class: "form-select" } %>
-      <%# l.input :position, label: false, placeholder: "Position", input_html: { class: "form-input" } %>
-      <%# l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
-    <%# end %>
-
-    <div class="box-container">
-      <div>
-        <h4>Approx. wait time</h4>
-        <h3> <%= @average_wait_time %> </h3>
-        <h4>minutes</h4>
-      </div>
+    <div>
+      <h4>Approx. wait time</h4>
+      <h3> <%= @average_wait_time %> </h3>
+      <h4>minutes</h4>
     </div>
+  </div>
 
-    <div class="box-container">
-      <div>
-        <h4>Number</h4>
-        <h3> <%= @current_position %></h3>
-        <h4>in line</h4>
-      </div>
+  <div class="box-container">
+    <div>
+      <h4>Number</h4>
+      <h3> <%= @current_position %></h3>
+      <h4>in line</h4>
     </div>
+  </div>
   <%# <br> %>
-  <%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
-    <%= f.button :submit, :class => 'btn-purple' %>
-  <% end %>
-    <%# <%= button_to 'Accept', '/stores/1/confirmations/1', :method => :get, :class => 'btn-purple' %>
-    <%# <br> %>
-    <%# <%= button_to 'Decline', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>
 
-<%# </div> %>
+  <%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
+    <%= f.button :submit, 'Confirm', :class => 'btn-purple' %>
+  <% end %>
 
