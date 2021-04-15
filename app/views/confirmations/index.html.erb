@@ -7,14 +7,14 @@
   <h2 class="text-center pt-5 mb-3">Confirmations</h2>
 
   <div class="container">
+
+
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
         <div class="card d-flex align-items-center text-center">
-          <div class="card-title">
             <p id="store-name"><%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
-            <p>Number in Line: <br>
-             <%= confirmation.position %> </p>
-          </div>
+            <p>Line</p>
+             <p id="line-number"> <%= confirmation.position %> </p>
          </div>
       <% end %>
     </div>
@@ -35,17 +35,3 @@
 
 </div>
 
-<!-- <div class="container">
-  <div class="row">
-
-    <div class="card-container">
-
-    </div>
-  </div>
-  <div class="row">
-    <div class="card-container">
-
-    </div>
-  </div>
-</div>
- -->
