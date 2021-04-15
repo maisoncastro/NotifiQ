@@ -4,9 +4,6 @@
 }
 
 #blur-img{
-  // background-image: asset-url("4058271.jpeg");
-  // background-size: contain;
-  // background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
   margin-top: 0;
@@ -20,11 +17,14 @@
 }
 
 .code{
-  background-color: $body-bg;
+  background-color: #6666FF;
   border: 1px solid rgba(0,0,0,-1);
-  border-radius: 8px;
+
   box-shadow: 1px 3px 10px rgba(0,0,0,-1);
   position: absolute;
-  left: 125px;
+  left: 90px;
   top: 105px;
+  svg {
+     border-radius: 8px;
+  }
 }
