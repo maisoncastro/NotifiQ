@@ -24,7 +24,7 @@
     <div class="box-info">
       <h4>Approx. wait</h4>
       <h3><%= @current_position*10 %></h3>
-    
+
       <h4>minutes</h4>
     </div>
 
@@ -36,10 +36,12 @@
   </div>
 
   <div class="box-container-show">
-    <div id="map"
-         style="width: 100%; height: 220px;"
-         data-markers="<%= @markers.to_json %>"
-         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    <div class="map-container">
+      <div id="map"
+           style="width: 320px; height: 220px;"
+           data-markers="<%= @markers.to_json %>"
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 

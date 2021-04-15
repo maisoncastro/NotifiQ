@@ -1,5 +1,14 @@
 class DashboardController < ApplicationController
   def index
+    @business_stores = Store.find_by(user_id: current_user)
+    @store = Store.where(user_id: current_user)
+
+    @markers = @store.geocoded.map do |s|
+      {
+        lat: s.latitude,
+        lng: s.longitude
+      }
+    end
   end
 
   def settings

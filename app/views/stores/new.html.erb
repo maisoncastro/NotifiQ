@@ -1,12 +1,10 @@
-<h1>Stores#new</h1>
-<p>Find me in app/views/stores/store.html.erb</p>
+<h1>Add your store</h1>
 
-<%= current_business_user %>
 <div class="container">
   <%= simple_form_for [@user, @store] do |l| %>
-    <%= l.input :name, label: false, placeholder: "Name", input_html: { class: "form-input" } %>
+    <%= l.input :name, label: false, placeholder: "Store Name", input_html: { class: "form-input" } %>
     <%= l.input :address, label: false, placeholder: "Address", input_html: { class: "form-input" } %>
-    <%= l.input :capacity, label: false, placeholder: "Capacity", input_html: { class: "form-input" } %>
+    <%= l.input :capacity, label: false, placeholder: "Max. Capacity", input_html: { class: "form-input" } %>
     <%= l.submit 'Submit', :class => 'btn', :class => 'btn-purple' %>
   <% end %>
 </div>
