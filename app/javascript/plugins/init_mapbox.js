@@ -7,7 +7,8 @@ const buildMap = (mapElement) => {
   mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/robaurobau/ckn7qubeo0o0317o2d2xzs3ho'
+    style: 'mapbox://styles/robaurobau/ckn7qubeo0o0317o2d2xzs3ho',
+    center: [0, 0]
   });
 };
 
