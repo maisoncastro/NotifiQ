@@ -40,6 +40,7 @@
   height: 280px;
   left: 10%;
   top: 20%;
+  padding: 24px;
   border-radius: 25px;
   box-shadow: 0px 8px 40px
     rgba(
@@ -157,6 +158,18 @@
       176.00000470876694,
       0.20000000298023224
     );
+}
+
+.client-container-info {
+  margin: auto;
+  text-align: center;
+
+    & h3 {
+    font-family: "Roboto", "sans-serif";
+    font-size: 48px;
+    font-weight: bold;
+    color: $purple;
+  }
 }
 
 .weather-container {
