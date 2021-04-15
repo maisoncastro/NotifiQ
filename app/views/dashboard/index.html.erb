@@ -55,41 +55,42 @@
         <% end %>
 
         <% if @business_stores.nil? %>
-        <div class="client-container">
-          <div class="client-container-info">
-            <%= link_to 'Add your store', new_store_path, class: 'btn-purple' %>
+          <div class="client-container">
+            <div class="client-container-info">
+              <%= link_to 'Add your store', new_store_path, class: 'btn-purple' %>
+            </div>
           </div>
-        </div>
 
-        <% else %>
-        <div class="client-container">
-          <div class="client-container-info">
-            <h2>Currently</h2>
-            <h3>14</h3>
-            <h2>NotifiQ users</h2>
+          <% else %>
+          <div class="client-container">
+            <div class="client-container-info">
+              <h2>Currently</h2>
+              <h3>14</h3>
+              <h2>NotifiQ users</h2>
+            </div>
           </div>
-        </div>
 
-        <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores.latitude %>" data-longitude="<%= @business_stores.longitude %>">
-          <div class="weather-container-info">
-            <div class="d-flex align-items-center">
+          <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores.latitude %>" data-longitude="<%= @business_stores.longitude %>">
+            <div class="weather-container-info">
+              <div class="d-flex align-items-center">
 
-                <div id="weather-icon">
-                </div>
+                  <div id="weather-icon">
+                  </div>
 
-                <div id="info">
-                </div>
+                  <div id="info">
+                  </div>
+
+              </div>
+
+                  <div id="city">
+                  </div>
 
             </div>
-
-                <div id="city">
-                </div>
-
-
           </div>
-        </div>
         <% end %>
-</div>
+
+     </div>
+
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
