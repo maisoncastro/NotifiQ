@@ -23,7 +23,6 @@
       176.00000470876694,
       0.20000000298023224
     );
-  background-image: asset-url("img_analytics.png");
 }
 
 .mini-container-2-analytics {
@@ -41,7 +40,6 @@
       176.00000470876694,
       0.20000000298023224
     );
-  background-image: asset-url("saq_location.jpg");
 }
 
 .container-main-dash-analytics {
@@ -52,6 +50,17 @@
   left: 307px;
   top: 81px;
   border-radius: 25px;
+  p {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 95px;
+  }
+  h2 {
+    padding: 16px 16px 5px 16px;
+    text-align: center;
+  }
 }
 
 .mini-container-3-analytics {
@@ -69,12 +78,17 @@
       176.00000470876694,
       0.20000000298023224
     );
-  h2 {
-    padding: 16px 16px 5px 16px;
-  }
   p {
     padding-left: 16px;
     padding-right: 16px;
+    padding-top: 22px;
+    text-align: center;
+    font-size: 86px;
+  }
+  h2 {
+    padding: 16px 16px 5px 16px;
+    text-align: center;
+    font-size: 23px;
   }
 }
 
