@@ -1,26 +1,28 @@
 
+<body class="mobile-page">
+
+  <%= render 'mobileheader' %>
+
 <div class="container-mobile">
-  <h1><%= @store.name %></h1>
-
-  <div class="box-container">
-
-    <div>
-      <h4>Approx. wait time</h4>
-      <h3> <%= @average_wait_time %> </h3>
-      <h4>minutes</h4>
+    <div class="box-container">
+      <div>
+        <h4>Approx. wait time</h4>
+        <h3> <%= @average_wait_time %> </h3>
+        <h4>minutes</h4>
+      </div>
     </div>
-  </div>
 
-  <div class="box-container">
-    <div>
-      <h4>Number</h4>
-      <h3> <%= @current_position %></h3>
-      <h4>in line</h4>
+    <div class="box-container">
+      <div>
+        <h4>Number</h4>
+        <h3> <%= @current_position %></h3>
+        <h4>in line</h4>
+      </div>
     </div>
-  </div>
-  <%# <br> %>
 
-  <%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
-    <%= f.button :submit, 'Confirm', :class => 'btn-purple' %>
-  <% end %>
-
+  <br>
+<%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
+  <%= f.button :submit, 'Get in the lineup!', :class => 'btn-purple' %>
+<% end %>
+  <br>
+  <%= button_to 'Not for me', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>
