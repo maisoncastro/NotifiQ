@@ -1,26 +1,33 @@
-
+<body class="mobile-page">
+  <%= render 'mobileheader' %>
 
 <div class="purple-page">
-  <h1 class="text-center ">Confirmations</h1>
+
+
+  <h2 class="text-center pt-5 mb-3">Confirmations</h2>
 
   <div class="container">
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
-        <div class="card">
-          <p>Store Name <%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
-          <p>Position in line <%= confirmation.position %> </p>
+        <div class="card d-flex align-items-center text-center">
+          <div class="card-title">
+            <p id="store-name"><%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
+            <p>Number in Line: <br>
+             <%= confirmation.position %> </p>
+          </div>
          </div>
       <% end %>
     </div>
   </div>
 
-  <h1 class="text-center">Stores</h1>
-
+  <h2 class="text-center pt-5 mb-3">Stores</h2>
   <div class="container">
     <div class="card-container">
       <% @stores.each do |store| %>
-        <div class="card">
-          <p>Store Name <%=link_to store.name, new_store_confirmation_path(store_id: store.id) %></p>
+        <div class="card text-center">
+          <div class="card-title">
+            <p id="store-name"><%=link_to store.name, new_store_confirmation_path(store_id: store.id) %></p>
+          </div>
         </div>
       <% end %>
     </div>
@@ -28,17 +35,17 @@
 
 </div>
 
+<!-- <div class="container">
+  <div class="row">
 
-<%# <h1>H1 font family test</h1>
-<h2>H2 font family test</h2>
-<h3>H3 font family test</h3>
-<p>p paragraph font family test</p>
-<ul>
-  <li><%= link_to "Links", root_path</li>
-  <%# <li><%= link_to "Links", root_path</li>  %>
-<%# </ul>  %>
+    <div class="card-container">
 
+    </div>
+  </div>
+  <div class="row">
+    <div class="card-container">
 
-<%# <div class="code">
-    <%= @svg.html_safe %>
-<%# </div> %>
+    </div>
+  </div>
+</div>
+ -->
