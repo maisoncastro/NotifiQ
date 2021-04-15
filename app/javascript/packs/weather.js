@@ -7,7 +7,7 @@ const weatherapp = () => {
 
       const apiKey = process.env.WEATHER_API_KEY;
 
-      const locationUrl = `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
+      const locationUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}`;
       fetch(locationUrl)
         .then(response => response.json())
         .then((data) => {
