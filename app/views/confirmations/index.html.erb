@@ -12,9 +12,11 @@
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
         <div class="card d-flex align-items-center text-center">
+          <div class="card-title">
             <p id="store-name"><%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
             <p>Line</p>
-             <p id="line-number"> <%= confirmation.position %> </p>
+             <p id="line-number"><%= confirmation.position %> </p>
+          </div>
          </div>
       <% end %>
     </div>
@@ -32,6 +34,5 @@
       <% end %>
     </div>
   </div>
-
 </div>
 

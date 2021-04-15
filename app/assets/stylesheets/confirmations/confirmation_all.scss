@@ -27,14 +27,19 @@
   box-shadow: 1px 2px 5px rgb(0,0,2);
 }
 
-.card-title > h3{
-  font-size: 45px;
-  color: $purple;
+.card-title > p{
+  font-size: 24px;
   font-weight: bolder;
+   color: $purple;
+
+   #store_name{
+    color: $purple;
+   }
 }
 
 #store_name {
   font-size: 36px;
+
 }
 #line-number{
   font-size: 34px;
