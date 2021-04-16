@@ -16,7 +16,9 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
     completed_confirmations = @store.confirmations.select(&:completed)
     @current_position = @confirmation.position - completed_confirmations.count
-    @time = Time.new + (10 * @current_position)
+    # one_minute = 60
+    # @time = (10 * one_minute * @current_position)
+    # @time = 10
 
     @url = "stores/#{@store.id}/confirmations/#{@confirmation.id}/edit"
     @store_qrcode = RQRCode::QRCode.new("http://notifiq.herokuapp.com/#{@url}")
@@ -39,6 +41,8 @@ class ConfirmationsController < ApplicationController
     pending_confirmations = @store.confirmations.reject(&:completed)
     @current_position = pending_confirmations.count
     @average_wait_time = 10 * @current_position
+    # @current_time = Time.now.to_i
+    # raise
   end
 
   def create
@@ -47,6 +51,13 @@ class ConfirmationsController < ApplicationController
     @confirmation.store = @store
     @confirmation.user = current_user
     @confirmation.position = @store.confirmations.count + 1
+
+    pending_confirmations = @store.confirmations.reject(&:completed)
+    current_position = pending_confirmations.count
+    wait_time = (10 * 60 * current_position)
+    nowUtc = Time.now.to_i
+    @confirmation.expected_visit_time = nowUtc + wait_time
+
     if @confirmation.save!
       ConfirmationMailer.confirmation_email(current_user).deliver_now
       redirect_to confirmations_path
