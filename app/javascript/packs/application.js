@@ -7,6 +7,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
+require("moment");
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -25,10 +26,9 @@ import "bootstrap";
 // CSS
 import "mapbox-gl/dist/mapbox-gl.css";
 // internal imports
-import { initMapbox } from '../plugins/init_mapbox';
-import { weatherapp } from '../packs/weather';
-
-
+import { initMapbox } from "../plugins/init_mapbox";
+import { countdown } from "./countdown.js";
+import { weatherapp } from "../packs/weather";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
@@ -38,3 +38,13 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   weatherapp();
 });
+// export { currentTime }; // <-- Add this line
+
+const timeleft = document.getElementById("timeLeft");
+if (timeleft) {
+  setInterval(function () {
+    // your code goes here...
+    countdown();
+    // console.log(time);
+  }, 1000); // 60 * 1000 milsec
+}
