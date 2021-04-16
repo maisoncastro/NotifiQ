@@ -34,27 +34,27 @@ iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle montreal queb
 iga_lasalle.user = iga
 iga_lasalle.save
 
-puts "Creating Confirmations.."
-now = Time.now
-end_time = now + 1.hour
+# puts "Creating Confirmations.."
+# now = Time.now
+# end_time = now + 1.hour
 
-tep = Confirmation.new(start_time: now, end_time: end_time, position: 1)
-tep.user_id = one.id
-tep.store = saq_express
-tep.save!
-tep.update_attribute :created_at, (10).days.ago
-tep.save!
+# tep = Confirmation.new(start_time: now, end_time: end_time, position: 1)
+# tep.user_id = one.id
+# tep.store = saq_express
+# tep.save!
+# tep.update_attribute :created_at, (10).days.ago
+# tep.save!
 
 
-confirm_one = Confirmation.new(start_time: now + 30.minutes, end_time: end_time + 30.minutes, position: 1)
-confirm_one.user_id = two.id
-confirm_one = sqdc_berri
-confirm_one.save
+# confirm_one = Confirmation.new(start_time: now + 30.minutes, end_time: end_time + 30.minutes, position: 1)
+# confirm_one.user_id = two.id
+# confirm_one = sqdc_berri
+# confirm_one.save
 
-confirm_two = Confirmation.new(start_time: now + 45.minutes, end_time: end_time + 45.minutes, position: 1)
-confirm_two.user_id =three.id
-confirm_two = iga_lasalle
-confirm_two.save
+# confirm_two = Confirmation.new(start_time: now + 45.minutes, end_time: end_time + 45.minutes, position: 1)
+# confirm_two.user_id =three.id
+# confirm_two = iga_lasalle
+# confirm_two.save
 
 puts "Done!"
 
