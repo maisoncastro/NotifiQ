@@ -1,4 +1,3 @@
-
 <body class="mobile-page">
 <%= render 'mobileheader' %>
 
@@ -23,10 +22,15 @@
   <div class="d-flex justify-content-center">
     <div class="box-info">
       <h4>Approx. wait</h4>
-      <h3><%= @current_position*10 %></h3>
-    
-      <h4>minutes</h4>
-    </div>
+
+      <script>
+        let expected_visit_time = "<%= @confirmation.expected_visit_time %>";
+      </script>
+
+      <h3 id="timeLeft"></h3>
+     <div class="countdown-timer"></div>
+       <h4>minutes</h4>
+     </div>
 
     <div class="box-info">
       <h4>Your position</h4>
@@ -110,3 +114,16 @@
 </div>
 
 
+<%# <script>
+  import moment from "moment";
+
+  const timeLeftBeforeArrival = (expectedTimeOfArrival) => {
+  const timeNow = moment.utc(expectedTimeOfArrival);
+  console.log(timeNow.fromNow());
+  return timeNow.fromNow();
+};
+
+  countdown = document.getElementById("countdown");
+  countdown.innerHTML = timeLeftBeforeArrival(1618359326000);
+  
+</script> %>
