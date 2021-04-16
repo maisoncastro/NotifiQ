@@ -7,10 +7,13 @@
   border: none;
   background-color: $purple;
   border-radius: 10px;
+  text-align: center;
 
-  & h4 {
-    color: white;
+  & p {
+    color: $white;
     margin: 0;
+    font-family: "Karla", "sans-serif";
+    font-size: 18px;
   }
 }
 
@@ -19,6 +22,22 @@
   border: none;
   background-color: $white;
   padding: 16px;
+  text-align: center;
+
+  & p {
+    color: $purple;
+    font-family: "Roboto", "sans-serif";
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  & h2 {
+    color: black;
+    font-family: "Roboto", "sans-serif";
+    font-size: 64px;
+    font-weight: 700;
+  }
+
 }
 
 .modal-backdrop {
