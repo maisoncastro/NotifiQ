@@ -38,7 +38,7 @@ puts "Creating Confirmations.."
 now = Time.now
 end_time = now + 1.hour
 
-tep = Confirmation.new(start_time: now, end_time: end_time, position: 1)
+tep = Confirmation.new(start_time: now, end_time: end_time, position: 1, expected_visit_time: 0)
 tep.user_id = one.id
 tep.store = saq_express
 tep.save!

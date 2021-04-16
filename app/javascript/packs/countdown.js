@@ -94,6 +94,11 @@ const setTimeValueInPage = (timeValue) => {
   if (timeLeftDiv) {
     timeLeftDiv.innerHTML = timeValue;
   }
+
+  if (timeValue < 0) {
+    timeLeftDiv.innerHTML = "<h3>0</h3>";
+  }
+
 };
 
 // const decrementTime = () => {
@@ -105,12 +110,11 @@ const setTimeValueInPage = (timeValue) => {
 // };
 
 const countdown = () => {
-  // console.log('start');
       const now = Math.floor(Date.now() / 1000);
       const timeLeftDiv = document.getElementById("timeLeft");
+      console.log('loaded');
 
-      if (timeLeftDiv.dataset.expected_time !== null) {
-
+      if (timeLeftDiv.dataset.expected_time) {
         const expected_visit_time = timeLeftDiv.dataset.expected_time;
         let timeLeftMilliseconds = expected_visit_time - now;
         // console.log(now);
@@ -122,17 +126,16 @@ const countdown = () => {
           )}`;
           setTimeValueInPage(timeLeft);
         }
-      }
 
-      // console.log('hello');
-
-      if (timeLeftDiv) {
-
-        setInterval(function () {
-          // your code goes here...
-          countdown();
-          // console.log(time);
-        }, 1000); // 60 * 1000 milsec
+        if (timeLeftDiv && timeLeftDiv.dataset.expected_time != null) {
+          setInterval(function () {
+            // your code goes here...
+            countdown();
+            // console.log(time);
+          }, 1000); // 60 * 1000 milsec
+        }
+      } else {
+        timeLeftDiv.innerHTML = "<h3>0</h3>";
       }
 
 };
@@ -141,5 +144,11 @@ const countdown = () => {
 //   let timeLeft = expectedTime.fromNow();
 //   setTimeValueInPage(timeLeft);
 // }
+
+      // if (timeLeft <= 10) {
+      //   console.log('hey');
+      //   $("#nextinline").modal();
+      //   return;
+      // }
 
 export { countdown };

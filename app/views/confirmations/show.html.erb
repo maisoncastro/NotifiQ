@@ -1,4 +1,4 @@
-<body class="mobile-page">
+<body class="mobile-page" id="counter">
 <%= render 'mobileheader' %>
 
 <div class="container-mobile">
@@ -6,6 +6,8 @@
   <div class="mobile-qrcode">
       <%= @svg.html_safe %>
   </div>
+
+  <p><%= link_to "View my lineups or Make a new one", confirmations_path %></p>
 
   <div class="box-container-show">
     <div>

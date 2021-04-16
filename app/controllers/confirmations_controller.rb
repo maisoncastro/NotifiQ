@@ -60,7 +60,7 @@ class ConfirmationsController < ApplicationController
 
     if @confirmation.save!
       ConfirmationMailer.confirmation_email(current_user).deliver_now
-      redirect_to confirmations_path
+      redirect_to store_confirmation_path(@store, @confirmation)
     else
       render :new
     end

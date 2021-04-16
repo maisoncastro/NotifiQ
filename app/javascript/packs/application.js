@@ -32,17 +32,28 @@ import { weatherapp } from "../packs/weather";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
+  document.addEventListener("DOMContentLoaded", () => {
+    const timeLeftDiv = document.getElementById("timeLeft");
+  });
+
   initMapbox();
   weatherapp();
-  countdown();
+  // countdown();
+  $(function(){
+    if($('body').is('#counter')){
+
+        countdown();
+        console.log("hello");
+
+    }
+  });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const timeLeftDiv = document.getElementById("timeLeft");
-});
+
 // export { currentTime }; // <-- Add this line
 
 // const timeleft = document.getElementById("timeLeft");
