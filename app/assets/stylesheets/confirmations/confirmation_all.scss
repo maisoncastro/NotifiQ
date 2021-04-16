@@ -1,0 +1,46 @@
+.purple-page{
+   max-width: 50vh;
+  margin: 0 auto;
+  border-radius: 30px;
+
+}
+
+.card-container{
+  display: flex;
+  // flex-direction: column;
+  // align-items: space-around;
+  // flex-wrap: wrap;
+  // flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  // flex-direction: column;
+  flex-basis: auto;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: $body-bg;
+  height: 200px;
+  width: 200px;
+  padding: 12px 12px;
+  margin: 12px 12px;
+  box-shadow: 1px 2px 5px rgb(0,0,2);
+}
+
+.card-title > p{
+  font-size: 24px;
+  font-weight: bolder;
+   color: $purple;
+
+   #store_name{
+    color: $purple;
+   }
+}
+
+#store_name {
+  font-size: 36px;
+
+}
+#line-number{
+  font-size: 34px;
+}

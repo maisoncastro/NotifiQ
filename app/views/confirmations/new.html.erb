@@ -1,19 +1,9 @@
+
 <body class="mobile-page">
 
   <%= render 'mobileheader' %>
 
 <div class="container-mobile">
-
-<!--     <h1>Confirmations#new</h1>
-    <p>Find me in app/views/confirmations/new.html.erb</p> -->
-
-    <%# simple_form_for [@user, @confirmation] do |l| %>
-      <%# l.input :start_time, input_html: { class: "form-select" } %>
-      <%# l.input :end_time, input_html: { class: "form-select" } %>
-      <%# l.input :position, label: false, placeholder: "Position", input_html: { class: "form-input" } %>
-      <%# l.submit 'Submit', :class => 'btn', :id => 'btn-purple' %>
-    <%# end %>
-
     <div class="box-container">
       <div>
         <h4>Approx. wait time</h4>
@@ -29,13 +19,10 @@
         <h4>in line</h4>
       </div>
     </div>
-  <%# <br> %>
-  <%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
-    <%= f.button :submit, :class => 'btn-purple' %>
-  <% end %>
-    <%# <%= button_to 'Accept', '/stores/1/confirmations/1', :method => :get, :class => 'btn-purple' %>
-    <%# <br> %>
-    <%# <%= button_to 'Decline', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>
 
-<%# </div> %>
-
+  <br>
+<%= simple_form_for [@store, @confirmation], html: { id: :confirm_form } do |f| %>
+  <%= f.button :submit, 'Get in the lineup!', :class => 'btn-purple' %>
+<% end %>
+  <br>
+  <%= button_to 'Not for me', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>

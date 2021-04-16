@@ -1,3 +1,4 @@
+
 <div class="master-container">
     <div class="image">
         <%= image_tag "logo.png", size: "80x80" %>
@@ -16,23 +17,83 @@
 
     <div class="container-main-dash">
         <div class="headz">
-            <h1 class="main-header">Dashboard</h1>
-            <p class="harry-p">Welcome Harry Potter to your store SAQ Jean-Talon!</p>
+            <h1>Dashboard</h1>
+            <h3>Welcome <%= current_user.fname.capitalize %> <%= current_user.lname.capitalize %>
+            <% if @business_stores.nil? %>
+            <p></p>
+            <% else %>
+              to your store <%= @business_stores.name.capitalize %>!</h3>
+            <% end %>
         </div>
 
         <div class="mini-container">
+          <% if @business_stores.nil? %>
 
+          <% else %>
+            <h2> <%= @business_stores.name.capitalize %> </h2>
+          <% end %>
+
+          <p>You are using NotifiQ for all your queue needs.</p>
+          <p>Navigate on your personal Dashboard
+            to view the number of clients using this app for your store. Analytics show you the stats to better understand
+            and analyze the ins and outs of your store. Now you can see when your business is at its most active. During the day or throughout
+            the week observe and examine your users need. Set up your QR code and easily change your store information when and where ever you want.
+          </p>
+          <p>Thank you for using NotifiQ, we are here for you.
+          </p>
         </div>
+
+        <% if @business_stores.nil? %>
+        <% else %>
         <div class="mini-container-2">
-
+          <div id="map"
+             style="width: 520px; height: 230px;"
+             data-markers="<%= @markers.to_json %>"
+             data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
+        <% end %>
 
-        <div class="weather-container">
+        <% if @business_stores.nil? %>
+          <div class="client-container">
+            <div class="client-container-info">
+              <%= link_to 'Add your store', new_store_path, class: 'btn-purple' %>
+            </div>
+          </div>
 
-        </div>
+          <% else %>
+          <div class="client-container">
+            <div class="client-container-info">
+              <h2>Currently</h2>
+              <h3>14</h3>
+              <h2>NotifiQ users</h2>
+            </div>
+          </div>
 
-    </div>
+          <div class="weather-container" id="weather-container" data-latitude="<%= @business_stores.latitude %>" data-longitude="<%= @business_stores.longitude %>">
+            <div class="weather-container-info">
+              <div class="d-flex align-items-center">
+
+                  <div id="weather-icon">
+                  </div>
+
+                  <div id="info">
+                  </div>
+
+              </div>
+
+                  <div id="city">
+                  </div>
+
+            </div>
+          </div>
+        <% end %>
+
+     </div>
+
     <div class="logout">
         <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
     </div>
+
 </div>
+
