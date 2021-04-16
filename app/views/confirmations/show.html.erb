@@ -23,11 +23,17 @@
     <div class="box-info">
       <h4>Approx. wait</h4>
 
-      <script>
-        let expected_visit_time = "<%= @confirmation.expected_visit_time %>";
-      </script>
+      <div id="expected_time">
 
-      <h3 id="timeLeft"></h3>
+      </div>
+
+<!--       <script>
+        let expected_visit_time = "<%= @confirmation.expected_visit_time %>";
+      </script> -->
+
+      <h3 id="timeLeft" data-expected_time="<%= @confirmation.expected_visit_time %>">
+
+      </h3>
      <div class="countdown-timer"></div>
        <h4>minutes</h4>
      </div>
@@ -41,10 +47,14 @@
 
   <div class="box-container-show">
     <div class="map-container">
+      <%
+=begin
       <div id="map"
            style="width: 320px; height: 220px;"
            data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> %>
+        <%
+=end %>
       </div>
     </div>
   </div>
@@ -127,5 +137,5 @@
 
   countdown = document.getElementById("countdown");
   countdown.innerHTML = timeLeftBeforeArrival(1618359326000);
-  
+
 </script> %>

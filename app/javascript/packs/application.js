@@ -37,14 +37,19 @@ document.addEventListener("turbolinks:load", () => {
   // initSelect2();
   initMapbox();
   weatherapp();
+  countdown();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const timeLeftDiv = document.getElementById("timeLeft");
 });
 // export { currentTime }; // <-- Add this line
 
-const timeleft = document.getElementById("timeLeft");
-if (timeleft) {
-  setInterval(function () {
-    // your code goes here...
-    countdown();
-    // console.log(time);
-  }, 1000); // 60 * 1000 milsec
-}
+// const timeleft = document.getElementById("timeLeft");
+// if (timeleft) {
+//   setInterval(function () {
+//     // your code goes here...
+//     countdown();
+//     // console.log(time);
+//   }, 1000); // 60 * 1000 milsec
+// }
