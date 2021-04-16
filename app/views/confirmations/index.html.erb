@@ -1,26 +1,28 @@
 <body class="mobile-page">
   <%= render 'mobileheader' %>
 
-<!-- <div class="purple-page"> -->
 
 
   <h2 class="text-center pt-5 mb-3">Confirmations</h2>
 
   <div class="container">
-
-<%= link_to "",  %>
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
-        <div class="card d-flex align-items-center text-center">
-          <div class="card-title">
-            <p id="store-name"><%= link_to confirmation.store.name, store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) %></p>
-            <p>Line</p>
-             <p id="line-number"><%= confirmation.position %> </p>
+            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+          <div class="card d-flex align-items-center text-center">
+            <div class="card-title">
+
+                <p id="store-name"><%= confirmation.store.name %></p>
+
+              <p>Line</p>
+               <p id="line-number"><%= confirmation.position %> </p>
+            </div>
           </div>
-         </div>
+          <% end %>
       <% end %>
     </div>
   </div>
+
 
   <h2 class="text-center pt-5 mb-3">Stores</h2>
   <div class="container">
@@ -34,5 +36,5 @@
       <% end %>
     </div>
   </div>
-<!-- </div> -->
+
 
