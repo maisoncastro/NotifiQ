@@ -40,7 +40,7 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
     pending_confirmations = @store.confirmations.reject(&:completed)
     @current_position = pending_confirmations.count
-    @average_wait_time = 10 * @current_position
+    @average_wait_time = 1 * @current_position
     # @current_time = Time.now.to_i
     # raise
   end
@@ -54,7 +54,7 @@ class ConfirmationsController < ApplicationController
 
     pending_confirmations = @store.confirmations.reject(&:completed)
     current_position = pending_confirmations.count
-    wait_time = (10 * 60 * current_position)
+    wait_time = (1 * 60 * current_position)
     nowUtc = Time.now.to_i
     @confirmation.expected_visit_time = nowUtc + wait_time
 

@@ -95,7 +95,7 @@ const setTimeValueInPage = (timeValue) => {
     timeLeftDiv.innerHTML = timeValue;
   }
 
-  if (timeValue < 0) {
+  if (timeValue < 0 ) {
     timeLeftDiv.innerHTML = "<h3>0</h3>";
   }
 
@@ -108,13 +108,22 @@ const setTimeValueInPage = (timeValue) => {
 //     clearInterval();
 //   }
 // };
-
 const countdown = () => {
+  $(function(){
+    if($('body').is('#counter')){
+        document.addEventListener("DOMContentLoaded", () => {
+          const timeLeftDiv = document.getElementById("timeLeft");
+        });
+        start_timer();
+    }
+  });
+}
+
+const start_timer = () => {
       const now = Math.floor(Date.now() / 1000);
       const timeLeftDiv = document.getElementById("timeLeft");
-      console.log('loaded');
 
-      if (timeLeftDiv.dataset.expected_time) {
+      if (timeLeftDiv.dataset.expected_time != null) {
         const expected_visit_time = timeLeftDiv.dataset.expected_time;
         let timeLeftMilliseconds = expected_visit_time - now;
         // console.log(now);
@@ -125,17 +134,23 @@ const countdown = () => {
             timeLeftMilliseconds
           )}`;
           setTimeValueInPage(timeLeft);
-        }
 
-        if (timeLeftDiv && timeLeftDiv.dataset.expected_time != null) {
-          setInterval(function () {
-            // your code goes here...
-            countdown();
-            // console.log(time);
-          }, 1000); // 60 * 1000 milsec
+          if (timeLeftMilliseconds == 50) {
+            $("#nextinline").modal();
+            console.log("5 minutes!")
+          }
+
+          if (timeLeftDiv) {
+            setInterval(function () {
+              // your code goes here...
+              countdown();
+              // console.log(time);
+            }, 1000); // 60 * 1000 milsec
+          }
+        } else {
+          $("#yourturn").modal();
+          console.log("zero!");
         }
-      } else {
-        timeLeftDiv.innerHTML = "<h3>0</h3>";
       }
 
 };

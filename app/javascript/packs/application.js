@@ -36,21 +36,23 @@ import { weatherapp } from "../packs/weather";
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
-  document.addEventListener("DOMContentLoaded", () => {
-    const timeLeftDiv = document.getElementById("timeLeft");
-  });
+
 
   initMapbox();
   weatherapp();
+  countdown();
   // countdown();
-  $(function(){
-    if($('body').is('#counter')){
+  // $(function(){
+  //   if($('body').is('#counter')){
+  //       document.addEventListener("DOMContentLoaded", () => {
+  //         const timeLeftDiv = document.getElementById("timeLeft");
+  //       });
 
-        countdown();
-        console.log("hello");
+  //       countdown();
+  //       console.log("hello");
 
-    }
-  });
+  //   }
+  // });
 });
 
 
