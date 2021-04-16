@@ -117,6 +117,8 @@ GEM
     mimemagic (0.3.5)
     mini_mime (1.0.2)
     minitest (5.14.4)
+    momentjs-rails (2.20.1)
+      railties (>= 3.1)
     msgpack (1.4.2)
     nio4r (2.5.7)
     nokogiri (1.11.2-x86_64-darwin)
@@ -255,6 +257,7 @@ DEPENDENCIES
   geocoder
   jbuilder (~> 2.7)
   listen (~> 3.2)
+  momentjs-rails
   pg (>= 0.18, < 2.0)
   pry-byebug
   pry-rails
