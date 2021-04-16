@@ -18,14 +18,15 @@
 }
 
 .code{
-  background-color: #6666FF;
   border: 1px solid rgba(0,0,0,-1);
-
   box-shadow: 1px 3px 10px rgba(0,0,0,-1);
   position: absolute;
-  left: 90px;
-  top: 105px;
+  left: 580px;
+  top: 100px;
   svg {
      border-radius: 8px;
+     border: 1px solid #b4aee8;
+     background-color: #b4aee8;
+     opacity: 0.4px;
   }
 }
