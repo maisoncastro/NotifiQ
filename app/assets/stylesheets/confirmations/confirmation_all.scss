@@ -28,7 +28,14 @@
 }
 
 .card:hover{
+  background-color: #d3dbff;
+  // background-color: #f4f6ff;
+  opacity: 0.5;
+  color: white;
 
+  .card-title {
+    color: white;
+  }
 }
 
 .card-title > p{
@@ -44,8 +51,8 @@
 }
 
 #icon{
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .card-details {
@@ -54,14 +61,21 @@
   align-items: center;
 }
 
-.card-items{
-
-}
-
 #store_name {
   font-size: 36px;
 }
 #line-number{
   font-size: 36px;
   color: $purple;
+}
+
+#marker{
+  height: 30px;
+  width: 30px;
+}
+#address {
+  padding: 16px 12px;
+  color: $purple;
+  font-size: 16px;
+  line-height: 1.3;
 }

@@ -34,6 +34,10 @@
         <div class="card text-center">
           <div class="card-title">
             <p id="store-name"><%= store.name %></p>
+              <div class="card-items">
+                <%= image_tag "marker.jpeg", alt: "alttext", :id=>"marker" %>
+                <p id="address"><%= store.address %> </p>
+              </div>
           </div>
         </div>
         <% end %>
