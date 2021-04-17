@@ -54,9 +54,20 @@ class ConfirmationsController < ApplicationController
 
     pending_confirmations = @store.confirmations.reject(&:completed)
     current_position = pending_confirmations.count
-    wait_time = (10 * 60 * current_position)
-    nowUtc = Time.now.to_i
-    @confirmation.expected_visit_time = nowUtc + wait_time
+
+    one_minute = 60 # seconds
+
+    case @store.name
+    when 'SAQ Express'
+      wait_time = (3 * one_minute)
+    when 'SQDC Berri'
+      wait_time = (10 * one_minute)
+    else
+      wait_time = (10 * 60 * current_position)
+    end
+
+    now_utc = Time.now.to_i
+    @confirmation.expected_visit_time = now_utc + wait_time
 
     if @confirmation.save!
       ConfirmationMailer.confirmation_email(current_user).deliver_now
