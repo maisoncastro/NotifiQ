@@ -22,15 +22,15 @@ saq.save!
 
 puts "Creating Stores.."
 
-saq_express = Store.new(name: "Saq Express", address: "954 Decarie montreal quebec", capacity: "10")
+saq_express = Store.new(name: "Saq Express", address: "954 Decarie montreal quebec", capacity: "10", message: "You are now waiting in line for SAQ. You must be 18 and older to enter the store. Thank you for using NotifiQ!")
 saq_express.user = saq
 saq_express.save!
 
-sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri montreal quebec", capacity: "10")
+sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri montreal quebec", capacity: "10", message: "You're now closer to enter the SQDC! Please remember to wear your mask inside the store. Thank you for your understanding.")
 sqdc_berri.user = sqdc
 sqdc_berri.save
 
-iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle montreal quebec", capacity: "10")
+iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle montreal quebec", capacity: "10", message: "You are now waiting to get in IGA. Please remember to wear your mask and wash your hand. Check out iga.ca for details on this month's special. Thank you for using NotifiQ!")
 iga_lasalle.user = iga
 iga_lasalle.save
 
@@ -38,7 +38,7 @@ puts "Creating Confirmations.."
 now = Time.now
 end_time = now + 1.hour
 
-tep = Confirmation.new(start_time: now, end_time: end_time, position: 1)
+tep = Confirmation.new(start_time: now, end_time: end_time, position: 1, expected_visit_time: 0)
 tep.user_id = one.id
 tep.store = saq_express
 tep.save!

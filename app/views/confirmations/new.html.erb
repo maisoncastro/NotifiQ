@@ -15,7 +15,7 @@
     <div class="box-container">
       <div>
         <h4>Number</h4>
-        <h3> <%= @current_position %></h3>
+        <h3> <%= @current_position + 1 %></h3>
         <h4>in line</h4>
       </div>
     </div>
@@ -25,4 +25,4 @@
   <%= f.button :submit, 'Get in the lineup!', :class => 'btn-purple' %>
 <% end %>
   <br>
-  <%= button_to 'Not for me', destroy_customer_session_path, :method => :delete, :class => 'btn-purple' %>
+  <%= button_to "I don't want to wait", confirmations_path, :method => :get, :class => 'btn-purple' %>
