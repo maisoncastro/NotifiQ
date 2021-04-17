@@ -2,57 +2,71 @@
   <%= render 'mobileheader' %>
 
 
-<!-- <div class="container-mobile"> -->
-  <h4>Confirmations</h4>
 
-  <div class="container">
+
+<div class="container-mobile">
+
+  <h4 class="mobile-title">Waiting in line</h4>
+  <br>
+  <div class="d-flex justify-content-center">
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
         <% if !confirmation.completed %>
-            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
-          <div class="card d-flex align-items-center text-center">
-            <div class="card-title">
-              <p><%= confirmation.store.name %></p>
-              <div class="card-details">
-                <div class="card-items">
-                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
-                 <p id="line-number"><%= confirmation.position %> </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <div class="box-info-all">
+          <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+            <h4><%= confirmation.store.name %></h4>
+            <h3><%= confirmation.position %>
+            <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%></h3>
+            <h4>position</h4>
           <% end %>
-         <% end %>
-      <% end %>
-    </div>
-  </div>
-
-<h4>Past Confirmations</h4>
-
-  <div class="container">
-    <div class="card-container">
-      <% @user_confirmations.each do |confirmation| %>
-        <% if confirmation.completed %>
-            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
-          <div class="card d-flex align-items-center text-center">
-            <div class="card-title">
-              <p><%= confirmation.store.name %></p>
-              <div class="card-details">
-                <div class="card-items">
-                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
-                 <p id="line-number"><%= confirmation.position %> </p>
-                </div>
-              </div>
-            </div>
           </div>
-          <% end %>
         <% end %>
       <% end %>
     </div>
   </div>
 
+  <h4 class="mobile-title">Past Visits</h4>
+  <br>
+  <div class="d-flex justify-content-center">
+    <div class="card-container">
+      <% @user_confirmations.each do |confirmation| %>
+        <% if confirmation.completed %>
+          <div class="box-info-all">
+          <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+            <h4><%= confirmation.store.name %></h4>
+            <p></p>
+          <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 
-  <h2 class="text-center pt-5 mb-3">Stores</h2>
+  <h4 class="mobile-title">Stores</h4>
+  <br>
+  <div class="d-flex justify-content-center">
+    <div class="card-container">
+      <% @stores.each do |store| %>
+        <div class="box-info-all">
+        <%=link_to new_store_confirmation_path(store_id: store.id) do%>
+          <h4><%= store.name %></h4>
+          <p><%= image_tag "map_marker.svg", alt: "alttext", :id=>"marker" %></p>
+          <p>View</p>
+        <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+</div>
+
+<%
+=begin %>
+
+
+
+
+<h4 class="mobile-title">Stores</h4>
   <div class="container">
     <div class="card-container">
       <% @stores.each do |store| %>
@@ -72,4 +86,6 @@
   </div>
 
 
-<!-- </div> -->
+</div>
+<%
+=end %>
