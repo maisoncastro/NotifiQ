@@ -42,4 +42,5 @@
 
 .modal-backdrop {
   background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(125,88,254,1) 100%) !important;
+  z-index: -1;
 }

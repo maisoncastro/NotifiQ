@@ -94,11 +94,6 @@ const setTimeValueInPage = (timeValue) => {
   if (timeLeftDiv) {
     timeLeftDiv.innerHTML = timeValue;
   }
-
-  if (timeValue < 0 ) {
-    timeLeftDiv.innerHTML = "<h3>0</h3>";
-  }
-
 };
 
 // const decrementTime = () => {
@@ -137,7 +132,6 @@ const start_timer = () => {
 
           if (timeLeftMilliseconds == 50) {
             $("#nextinline").modal();
-            console.log("5 minutes!")
           }
 
           if (timeLeftDiv) {
@@ -148,8 +142,8 @@ const start_timer = () => {
             }, 1000); // 60 * 1000 milsec
           }
         } else {
+          $('#nextinline').modal('hide');
           $("#yourturn").modal();
-          console.log("zero!");
         }
       }
 
