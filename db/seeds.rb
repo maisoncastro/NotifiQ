@@ -5,13 +5,18 @@ User.destroy_all
 
 puts "Creating Users.."
 
-puts "Creating Customers.."
+def create_user(name)
+  user = User.create!(fname: name, lname: "last", username: name, email: "#{name}@email.com", password: "123", type: Customer)
+  puts "Created user #{name}"
+  return user
+end
 
-one = User.create!(fname: "one", lname: "last", username: "one", email: "one@email.com", password: "123", type: Customer)
-two = User.create!(fname: "two", lname: "last", username: "two", email: "two@email.com", password: "123", type: Customer)
-three = User.create!(fname: "three", lname: "last", username: "three", email: "three@email.com", password: "123", type: Customer)
-four = User.create!(fname: "four", lname: "last", username: "four", email: "four@email.com", password: "123", type: Customer)
-one.save!
+puts "Creating Customers.."
+bruce = create_user('Bruce')
+
+10.times do |name|
+  create_user("name#{name}")
+end
 
 puts "Creating Businesses.."
 
@@ -22,63 +27,46 @@ saq.save!
 
 puts "Creating Stores.."
 
-saq_express = Store.new(name: "Saq Express", address: "954 Decarie montreal quebec", capacity: "10", message: "You are now waiting in line for SAQ. You must be 18 and older to enter the store. Thank you for using NotifiQ!")
-saq_express.user = saq
-saq_express.save!
+def create_store(name, address, user)
+  store = Store.new(name: name, address: address, capacity: "10")
+  store.user = user
+  store.save!
+  puts "Created store #{store.name}"
+  return store
+end
 
-sqdc_berri = Store.new(name: "SQDC Berri", address: "123 Berri montreal quebec", capacity: "10", message: "You're now closer to enter the SQDC! Please remember to wear your mask inside the store. Thank you for your understanding.")
-sqdc_berri.user = sqdc
-sqdc_berri.save
+saq_express = create_store("SAQ Express", "954 Decarie montreal quebec", saq)
 
-iga_lasalle = Store.new(name: "IGA LaSalle", address: "123 LaSalle montreal quebec", capacity: "10", message: "You are now waiting to get in IGA. Please remember to wear your mask and wash your hand. Check out iga.ca for details on this month's special. Thank you for using NotifiQ!")
-iga_lasalle.user = iga
-iga_lasalle.save
+sqdc_berri = create_store( "SQDC Berri", "123 Berri montreal quebec", sqdc)
 
-<<<<<<< HEAD
-# puts "Creating Confirmations.."
-# now = Time.now
-# end_time = now + 1.hour
+iga_lasalle = create_store("IGA LaSalle", "123 LaSalle montreal quebec", iga)
 
-# tep = Confirmation.new(start_time: now, end_time: end_time, position: 1)
-# tep.user_id = one.id
-# tep.store = saq_express
-# tep.save!
-# tep.update_attribute :created_at, (10).days.ago
-# tep.save!
+['Costco', 'McDonalds', 'IKEA', 'Nike'].each do |name|
+  create_store(name, "123 LaSalle montreal quebec", iga)
+end
 
-
-# confirm_one = Confirmation.new(start_time: now + 30.minutes, end_time: end_time + 30.minutes, position: 1)
-# confirm_one.user_id = two.id
-# confirm_one = sqdc_berri
-# confirm_one.save
-
-# confirm_two = Confirmation.new(start_time: now + 45.minutes, end_time: end_time + 45.minutes, position: 1)
-# confirm_two.user_id =three.id
-# confirm_two = iga_lasalle
-# confirm_two.save
-=======
 puts "Creating Confirmations.."
-now = Time.now
-end_time = now + 1.hour
 
-tep = Confirmation.new(start_time: now, end_time: end_time, position: 1, expected_visit_time: 0)
-tep.user_id = one.id
-tep.store = saq_express
-tep.save!
-tep.update_attribute :created_at, (10).days.ago
-tep.save!
+def create_confirmation(store, position_number, user)
+  now = Time.now
+  confirmation = Confirmation.create!(start_time: now, end_time: now + 1.hour, position: position_number, store: store, user: user)
+  confirmation.update_attribute :created_at, (10).days.ago
+  confirmation.save!
+  puts "#{user.fname} is in position #{position_number} in line "
+  return confirmation
+end
 
+def create_queue(store, quantity)
+  customers = User.customers.reject{|customer| customer.fname == 'Bruce'}
+  puts "Creating queue for #{store.name}"
+  quantity.times do |number|
+    user = customers.sample
+    create_confirmation(store, number, user)
+  end
+end
 
-confirm_one = Confirmation.new(start_time: now + 30.minutes, end_time: end_time + 30.minutes, position: 1)
-confirm_one.user_id = two.id
-confirm_one = sqdc_berri
-confirm_one.save
-
-confirm_two = Confirmation.new(start_time: now + 45.minutes, end_time: end_time + 45.minutes, position: 1)
-confirm_two.user_id =three.id
-confirm_two = iga_lasalle
-confirm_two.save
->>>>>>> master
+create_queue(saq_express, 10)
+create_queue(sqdc_berri, 60)
 
 puts "Done!"
 

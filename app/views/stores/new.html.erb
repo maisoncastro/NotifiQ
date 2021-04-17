@@ -1,10 +1,16 @@
-<h1>Add your store</h1>
+<body class="mobile-page">
+  <%= render 'mobileheader' %>
 
-<div class="container">
-  <%= simple_form_for [@user, @store] do |l| %>
-    <%= l.input :name, label: false, placeholder: "Store Name", input_html: { class: "form-input" } %>
-    <%= l.input :address, label: false, placeholder: "Address", input_html: { class: "form-input" } %>
-    <%= l.input :capacity, label: false, placeholder: "Max. Capacity", input_html: { class: "form-input" } %>
-    <%= l.submit 'Submit', :class => 'btn', :class => 'btn-purple' %>
-  <% end %>
-</div>
+  <div class="container">
+      <h2 >Store Registration</h2>
+      <div class="store-container ">
+        <%= simple_form_for [@user, @store] do |l| %>
+          <%= l.input :name, label: false, placeholder: "Store Name", input_html: { class: "form-input" } %>
+          <%= l.input :address, label: false, placeholder: "Address", input_html: { class: "form-input" } %>
+          <%= l.input :capacity, label: false, placeholder: "Max. Capacity", input_html: { class: "form-input" } %>
+          <%= l.submit 'Submit', :class => 'btn', :class => 'btn-purple' %>
+        <% end %>
+      </div>
+  </div>
+
+
