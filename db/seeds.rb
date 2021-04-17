@@ -28,7 +28,7 @@ saq.save!
 puts "Creating Stores.."
 
 def create_store(name, address, user)
-  store = Store.new(name: name, address: address, capacity: "10")
+  store = Store.new(name: name, address: address, capacity: "10", message: "You are now one step closer to getting in your favorite store. Please remember to wash your hands and to always wear a mask. Thank you for using NotifiQ!")
   store.user = user
   store.save!
   puts "Created store #{store.name}"
