@@ -1,0 +1,32 @@
+.card-container{
+  display: flex;
+  flex-basis: auto;
+  flex-wrap: wrap;
+}
+
+#marker{
+  height: 40px;
+  width: 40px;
+}
+
+.box-info-all {
+  display: grid;
+  margin: 16px;
+  background-color: $white;
+  width: 150px;
+  height: 150px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 16px;
+
+  & p {
+    margin: 0;
+  }
+
+  & .store-info {
+    margin: auto;
+    text-align: center;
+  }
+}
+

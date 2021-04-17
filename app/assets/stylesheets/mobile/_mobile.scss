@@ -44,8 +44,23 @@
     font-family: "Roboto", "sans-serif";
     font-size: 18px;
   }
+
+  & h4.mobile-title {
+    color: black;
+  }
 }
 
 .mobile-qrcode {
   padding-bottom: 36px;
+}
+
+.box-info {
+  margin: 16px;
+  background-color: $white;
+  width: 150px;
+  height: 150px;
+  box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 30px;
+  margin-bottom: 20px;
+  padding: 16px;
 }

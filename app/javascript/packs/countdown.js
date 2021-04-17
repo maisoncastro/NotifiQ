@@ -36,6 +36,7 @@ const countdown = () => {
 };
 
 const start_timer = () => {
+<<<<<<< HEAD
   const now = Math.floor(Date.now() / 1000);
   const timeLeftDiv = document.getElementById("timeLeft");
 
@@ -51,6 +52,37 @@ const start_timer = () => {
 
       if (timeLeftMilliseconds == 50) {
         $("#nextinline").modal();
+=======
+      const now = Math.floor(Date.now() / 1000);
+      const timeLeftDiv = document.getElementById("timeLeft");
+
+      if (timeLeftDiv.dataset.expected_time != null) {
+        const expected_visit_time = timeLeftDiv.dataset.expected_time;
+        let timeLeftMilliseconds = expected_visit_time - now;
+
+        if (timeLeftMilliseconds > -1) {
+          let timeLeft = `${getMinutes(timeLeftMilliseconds)}:${getSeconds(
+            timeLeftMilliseconds
+          )}`;
+          setTimeValueInPage(timeLeft);
+
+          if (timeLeftMilliseconds == 60) {
+            $("#nextinline").modal();
+          }
+
+          if (timeLeftDiv) {
+            console.log("timer")
+            setInterval(function () {
+
+              countdown();
+              // console.log(time);
+            }, 1000); // 60 * 1000 milsec
+          }
+        } else {
+          $('#nextinline').modal('hide');
+          $("#yourturn").modal();
+        }
+>>>>>>> master
       }
     } else {
       $("#nextinline").modal("hide");
