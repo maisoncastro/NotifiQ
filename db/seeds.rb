@@ -12,7 +12,7 @@ def create_user(name)
 end
 
 puts "Creating Customers.."
-bruce = create_user('Bruce')
+bruce = create_user('bruce')
 
 10.times do |name|
   create_user("name#{name}")
@@ -57,7 +57,7 @@ def create_confirmation(store, position_number, user)
 end
 
 def create_queue(store, quantity)
-  customers = User.customers.reject{|customer| customer.fname == 'Bruce'}
+  customers = User.customers.reject{|customer| customer.fname == 'bruce'}
   puts "Creating queue for #{store.name}"
   quantity.times do |number|
     user = customers.sample
