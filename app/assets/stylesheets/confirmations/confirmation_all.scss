@@ -27,6 +27,17 @@
   box-shadow: 1px 2px 5px rgb(0,0,2);
 }
 
+.card:hover{
+  background-color: #d3dbff;
+  // background-color: #f4f6ff;
+  opacity: 0.5;
+  color: white;
+
+  .card-title {
+    color: white;
+  }
+}
+
 .card-title > p{
   font-size: 24px;
   font-weight: bolder;
@@ -34,13 +45,37 @@
 
    #store_name{
     color: $purple;
+    padding: 12px 24px;
    }
+
+}
+
+#icon{
+  height: 35px;
+  width: 35px;
+}
+
+.card-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #store_name {
   font-size: 36px;
-
 }
 #line-number{
-  font-size: 34px;
+  font-size: 36px;
+  color: $purple;
+}
+
+#marker{
+  height: 30px;
+  width: 30px;
+}
+#address {
+  padding: 16px 12px;
+  color: $purple;
+  font-size: 16px;
+  line-height: 1.3;
 }

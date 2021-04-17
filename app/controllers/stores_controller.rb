@@ -54,7 +54,7 @@ class StoresController < ApplicationController
       offset: 0,
       color: '000',
       shape_rendering: 'crispEdges',
-      module_size: 3
+      module_size: 4
     )
     @markers = [{
       lat: @store.latitude,
