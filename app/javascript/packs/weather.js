@@ -12,7 +12,6 @@ const weatherapp = () => {
         .then(response => response.json())
         .then((data) => {
           showWeather(data);
-          console.log(data);
         });
     }
 };
