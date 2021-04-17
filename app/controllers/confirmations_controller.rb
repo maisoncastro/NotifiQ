@@ -16,6 +16,9 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
     completed_confirmations = @store.confirmations.select(&:completed)
     @current_position = @confirmation.position - completed_confirmations.count
+
+    now_utc = Time.now.to_i
+    @wait_time = @confirmation.expected_visit_time - now_utc
     # one_minute = 60
     # @time = (10 * one_minute * @current_position)
     # @time = 10
@@ -40,9 +43,15 @@ class ConfirmationsController < ApplicationController
     @store = Store.find(params[:store_id])
     pending_confirmations = @store.confirmations.reject(&:completed)
     @current_position = pending_confirmations.count
-    @average_wait_time = 1 * @current_position
-    # @current_time = Time.now.to_i
-    # raise
+
+    case @store.name
+    when 'SAQ Express'
+      @average_wait_time = 3
+    when 'SQDC Berri'
+      @average_wait_time = 50
+    else
+      @average_wait_time = (1 * 60 * @current_position)
+    end
   end
 
   def create
@@ -53,7 +62,7 @@ class ConfirmationsController < ApplicationController
     @confirmation.position = @store.confirmations.count + 1
 
     pending_confirmations = @store.confirmations.reject(&:completed)
-    current_position = pending_confirmations.count
+    @current_position = pending_confirmations.count
 
     one_minute = 60 # seconds
 
@@ -61,9 +70,9 @@ class ConfirmationsController < ApplicationController
     when 'SAQ Express'
       wait_time = (3 * one_minute)
     when 'SQDC Berri'
-      wait_time = (10 * one_minute)
+      wait_time = (50 * one_minute)
     else
-      wait_time = (10 * 60 * current_position)
+      wait_time = (10 * one_minute * @current_position)
     end
 
     now_utc = Time.now.to_i
