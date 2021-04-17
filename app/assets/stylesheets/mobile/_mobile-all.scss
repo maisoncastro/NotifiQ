@@ -1,7 +1,5 @@
 .card-container{
   display: flex;
-  // justify-content: center;
-  // align-items: center;
   flex-basis: auto;
   flex-wrap: wrap;
 }
@@ -12,6 +10,7 @@
 }
 
 .box-info-all {
+  display: grid;
   margin: 16px;
   background-color: $white;
   width: 150px;
@@ -24,4 +23,10 @@
   & p {
     margin: 0;
   }
+
+  & .store-info {
+    margin: auto;
+    text-align: center;
+  }
 }
+

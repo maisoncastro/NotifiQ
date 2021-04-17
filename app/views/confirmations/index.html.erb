@@ -34,9 +34,8 @@
           <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
           <div class="box-info-all">
             <h4><%= confirmation.store.name %></h4>
-            <h3><%= confirmation.position %>
-            <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%></h3>
-            <h4>position</h4>
+            <h3>☑️</h3>
+            </h3>
           </div>
           <% end %>
       <% end %>
@@ -56,23 +55,17 @@
 
          <%=link_to new_store_confirmation_path(store_id: store.id) do%>
           <div class="box-info-all">
-            <h4><%= store.name %></h4>
-            <p><%= image_tag "map_marker.svg", alt: "alttext", :id=>"marker" %></p>
-            <p>View</p>
+            <div class="store-info">
+              <h4><%= store.name %></h4>
+              <p><%= image_tag "map_marker.svg", alt: "alttext", :id=>"marker" %></p>
+              <p>View</p>
+            </div>
           </div>
-
-      <% end %>
+        <% end %>
       <% end %>
 
     </div>
   </div>
-
-
-</div>
-
-
-
-
 
 
 
