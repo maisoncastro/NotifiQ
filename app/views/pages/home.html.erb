@@ -1,12 +1,14 @@
+<title>NotifiQ - Don't Wait in Line!</title>
+
 <% if customer_signed_in? %>
-    <p>I'm a Customer</p>
-    <%= link_to 'Edit my Customer Profile', edit_customer_registration_path %>
+    <%# <p>I'm a Customer</p> %>
+    <% link_to 'Edit my Customer Profile', edit_customer_registration_path %>
 <% end %>
 
 <% if business_user_signed_in? %>
 <%= current_business_user.id %>
     <p>I'm a Businees user</p>
-    <%= link_to 'Edit my Business User Profile', edit_business_user_registration_path %>
+    <% link_to 'Edit my Business User Profile', edit_business_user_registration_path %>
 <% end %>
 
 </br>
@@ -22,8 +24,8 @@
 </div>
 
 <% if customer_signed_in? %>
-    <%= link_to 'Log out', destroy_customer_session_path, method: :delete %>
+    <% link_to 'Log out', destroy_customer_session_path, method: :delete %>
 <% end %>
 <% if business_user_signed_in? %>
-    <%= link_to 'Log out', destroy_business_user_session_path, method: :delete %>
+    <% link_to 'Log out', destroy_business_user_session_path, method: :delete %>
 <% end %>
