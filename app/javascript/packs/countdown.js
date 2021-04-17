@@ -89,7 +89,11 @@ const getSeconds = (time) => {
 };
 
 const setTimeValueInPage = (timeValue) => {
-  document.getElementById("timeLeft").innerHTML = timeValue;
+  const timeLeftDiv = document.getElementById("timeLeft");
+
+  if (timeLeftDiv) {
+    timeLeftDiv.innerHTML = timeValue;
+  }
 };
 
 // const decrementTime = () => {
@@ -99,24 +103,61 @@ const setTimeValueInPage = (timeValue) => {
 //     clearInterval();
 //   }
 // };
-
 const countdown = () => {
-  const now = Math.floor(Date.now() / 1000);
-  let timeLeftMilliseconds = expected_visit_time - now;
-  // console.log(now);
-  // console.log(expected_visit_time);
-  if (timeLeftMilliseconds > -1) {
-    let timeLeft = `${getMinutes(timeLeftMilliseconds)}:${getSeconds(
-      timeLeftMilliseconds
-    )}`;
-    setTimeValueInPage(timeLeft);
-  }
-};
+  $(function(){
+    if($('body').is('#counter')){
+        document.addEventListener("DOMContentLoaded", () => {
+          const timeLeftDiv = document.getElementById("timeLeft");
+        });
+        start_timer();
+    }
+  });
+}
 
+const start_timer = () => {
+      const now = Math.floor(Date.now() / 1000);
+      const timeLeftDiv = document.getElementById("timeLeft");
+
+      if (timeLeftDiv.dataset.expected_time != null) {
+        const expected_visit_time = timeLeftDiv.dataset.expected_time;
+        let timeLeftMilliseconds = expected_visit_time - now;
+        // console.log(now);
+        // console.log(expected_visit_time);
+
+        if (timeLeftMilliseconds > -1) {
+          let timeLeft = `${getMinutes(timeLeftMilliseconds)}:${getSeconds(
+            timeLeftMilliseconds
+          )}`;
+          setTimeValueInPage(timeLeft);
+
+          if (timeLeftMilliseconds == 50) {
+            $("#nextinline").modal();
+          }
+
+          if (timeLeftDiv) {
+            setInterval(function () {
+              // your code goes here...
+              countdown();
+              // console.log(time);
+            }, 1000); // 60 * 1000 milsec
+          }
+        } else {
+          $('#nextinline').modal('hide');
+          $("#yourturn").modal();
+        }
+      }
+
+};
 // const approximateTimeLeftWithMoment = () => {
 //   const expectedTime = Moment.utc(123445);
 //   let timeLeft = expectedTime.fromNow();
 //   setTimeValueInPage(timeLeft);
 // }
+
+      // if (timeLeft <= 10) {
+      //   console.log('hey');
+      //   $("#nextinline").modal();
+      //   return;
+      // }
 
 export { countdown };

@@ -32,19 +32,23 @@ import { weatherapp } from "../packs/weather";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
+
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
   weatherapp();
+  countdown();
 });
+
+
 // export { currentTime }; // <-- Add this line
 
-const timeleft = document.getElementById("timeLeft");
-if (timeleft) {
-  setInterval(function () {
-    // your code goes here...
-    countdown();
-    // console.log(time);
-  }, 1000); // 60 * 1000 milsec
-}
+// const timeleft = document.getElementById("timeLeft");
+// if (timeleft) {
+//   setInterval(function () {
+//     // your code goes here...
+//     countdown();
+//     // console.log(time);
+//   }, 1000); // 60 * 1000 milsec
+// }

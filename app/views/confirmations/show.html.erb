@@ -1,4 +1,4 @@
-<body class="mobile-page">
+<body class="mobile-page" id="counter">
 <%= render 'mobileheader' %>
 
 <div class="container-mobile">
@@ -6,6 +6,8 @@
   <div class="mobile-qrcode">
       <%= @svg.html_safe %>
   </div>
+
+  <p><%= link_to "View my lineups or Make a new one", confirmations_path %></p>
 
   <div class="box-container-show">
     <div>
@@ -23,18 +25,27 @@
     <div class="box-info">
       <h4>Approx. wait</h4>
 
-      <script>
-        let expected_visit_time = "<%= @confirmation.expected_visit_time %>";
-      </script>
+      <div id="expected_time">
 
-      <h3 id="timeLeft"></h3>
+      </div>
+
+<!--       <script>
+        let expected_visit_time = "<%= @confirmation.expected_visit_time %>";
+      </script> -->
+
+      <h3 id="timeLeft" data-expected_time="<%= @confirmation.expected_visit_time %>">
+
+      </h3>
      <div class="countdown-timer"></div>
        <h4>minutes</h4>
      </div>
 
     <div class="box-info">
       <h4>Your position</h4>
-      <h3> <%= @current_position %></h3>
+<!--       <h3> <%= @current_position %></h3> -->
+      <div id="position">
+      <h3><%= @current_position %></h3>
+      </div>
       <h4>in line</h4>
     </div>
   </div>
@@ -44,15 +55,15 @@
       <div id="map"
            style="width: 320px; height: 220px;"
            data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> %>
       </div>
     </div>
   </div>
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nextinline">
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nextinline">
   Next in line
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="nextinline" tabindex="-1" role="dialog" aria-labelledby="nextinline" aria-hidden="true">
@@ -62,7 +73,7 @@
         <div class="modal-dialog" role="document" id="modal-size">
             <div class="modal-content" id="modal-top-alert">
               <div class="modal-body">
-                <h4>It's almost your turn!</h4>
+                <p>It's almost your turn!</p>
               </div>
             </div>
         </div>
@@ -70,7 +81,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" id="modal-show">
               <div class="modal-body">
-                <h4>See you in</h4>
+                <p>See you in</p>
                 <h2>5 mins</h2>
               </div>
             </div>
@@ -82,9 +93,9 @@
 
 
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yourturn" >
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#yourturn" >
   Your turn!
-</button>
+</button> -->
 
 <!-- Modal -->
 <div class="modal fade" id="yourturn" tabindex="-1" role="dialog" aria-labelledby="yourturn" aria-hidden="true">
@@ -94,7 +105,7 @@
         <div class="modal-dialog" role="document" id="modal-size">
             <div class="modal-content" id="modal-top-alert">
               <div class="modal-body">
-                <h4>It's your turn!</h4>
+                <p>It's your turn!</p>
               </div>
             </div>
         </div>
@@ -102,9 +113,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" id="modal-show">
               <div class="modal-body">
-                <h4>Welcome to <%= @store.name %></h4>
+                <p>Welcome to <%= @store.name %></p>
                 <h2>🎉</h2>
-                <h4>Show your QR code</h4>
+                <p>Show your QR code</p>
               </div>
             </div>
         </div>
@@ -127,5 +138,5 @@
 
   countdown = document.getElementById("countdown");
   countdown.innerHTML = timeLeftBeforeArrival(1618359326000);
-  
+
 </script> %>

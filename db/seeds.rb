@@ -18,7 +18,6 @@ bruce = create_user('Bruce')
   create_user("name#{name}")
 end
 
-
 puts "Creating Businesses.."
 
 saq = User.create!(fname: "john", lname: "doe", username: "saq", email: "saq@email.com", password: "123", type: BusinessUser)
@@ -46,9 +45,8 @@ iga_lasalle = create_store("IGA LaSalle", "123 LaSalle montreal quebec", iga)
   create_store(name, "123 LaSalle montreal quebec", iga)
 end
 
+
 puts "Creating Confirmations.."
-now = Time.now
-end_time = now + 1.hour
 
 def create_confirmation(store, position_number, user)
   now = Time.now
@@ -70,5 +68,6 @@ end
 
 create_queue(saq_express, 10)
 create_queue(sqdc_berri, 60)
+
 puts "Done!"
 
