@@ -2,12 +2,13 @@
   <%= render 'mobileheader' %>
 
 
-
-  <h2 class="text-center pt-5 mb-3">Confirmations</h2>
+<!-- <div class="container-mobile"> -->
+  <h4>Confirmations</h4>
 
   <div class="container">
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
+        <% if !confirmation.completed %>
             <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
           <div class="card d-flex align-items-center text-center">
             <div class="card-title">
@@ -21,6 +22,31 @@
             </div>
           </div>
           <% end %>
+         <% end %>
+      <% end %>
+    </div>
+  </div>
+
+<h4>Past Confirmations</h4>
+
+  <div class="container">
+    <div class="card-container">
+      <% @user_confirmations.each do |confirmation| %>
+        <% if confirmation.completed %>
+            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+          <div class="card d-flex align-items-center text-center">
+            <div class="card-title">
+              <p><%= confirmation.store.name %></p>
+              <div class="card-details">
+                <div class="card-items">
+                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
+                 <p id="line-number"><%= confirmation.position %> </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
       <% end %>
     </div>
   </div>
@@ -46,3 +72,4 @@
   </div>
 
 
+<!-- </div> -->
