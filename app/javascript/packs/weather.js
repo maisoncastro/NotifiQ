@@ -20,7 +20,7 @@ const weatherapp = () => {
 function showWeather( input ) {
   const celcius = Math.round(parseFloat(input.main.temp)-273.15);
   const weatherInfo = document.querySelector("#info");
-  const weatherCity = document.querySelector('#city');
+  const weatherCity = document.querySelector("#city");
   const weatherIcon = document.querySelector("#weather-icon");
 
   weatherInfo.infoHTML = "";
