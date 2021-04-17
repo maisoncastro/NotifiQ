@@ -11,14 +11,19 @@
   <div class="d-flex justify-content-center">
     <div class="card-container">
       <% @user_confirmations.each do |confirmation| %>
-        <% if !confirmation.completed %>
-          <div class="box-info-all">
-          <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
-            <h4><%= confirmation.store.name %></h4>
-            <h3><%= confirmation.position %>
-            <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%></h3>
-            <h4>position</h4>
-          <% end %>
+      <% if !confirmation.completed %>
+            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+          <div class="card d-flex align-items-center text-center">
+            <div class="card-title">
+              <p><%= confirmation.store.name %></p>
+              <div class="card-details">
+                <div class="card-items">
+                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
+                 <p id="line-number"><%= confirmation.position %> </p>
+                </div>
+              </div>
+            </div>
+
           </div>
         <% end %>
       <% end %>
@@ -36,8 +41,32 @@
             <h4><%= confirmation.store.name %></h4>
             <p></p>
           <% end %>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <h2 class="text-center pt-5 mb-3"> Past Confirmations</h2>
+
+  <div class="container">
+    <div class="card-container">
+      <% @user_confirmations.each do |confirmation| %>
+            <% if confirmation.completed %>
+            <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
+          <div class="card d-flex align-items-center text-center">
+            <div class="card-title">
+              <p><%= confirmation.store.name %></p>
+              <div class="card-details">
+                <div class="card-items">
+                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
+                 <p id="line-number"><%= confirmation.position %> </p>
+                </div>
+              </div>
+            </div>
           </div>
-        <% end %>
+          <% end %>
+          <% end %>
+
       <% end %>
     </div>
   </div>
