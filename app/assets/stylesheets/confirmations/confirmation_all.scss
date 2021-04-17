@@ -27,6 +27,10 @@
   box-shadow: 1px 2px 5px rgb(0,0,2);
 }
 
+.card:hover{
+
+}
+
 .card-title > p{
   font-size: 24px;
   font-weight: bolder;
@@ -34,13 +38,30 @@
 
    #store_name{
     color: $purple;
+    padding: 12px 24px;
    }
+
+}
+
+#icon{
+  height: 40px;
+  width: 40px;
+}
+
+.card-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-items{
+
 }
 
 #store_name {
   font-size: 36px;
-
 }
 #line-number{
-  font-size: 34px;
+  font-size: 40px;
+  color: $purple;
 }

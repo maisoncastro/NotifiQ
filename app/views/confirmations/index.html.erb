@@ -11,9 +11,13 @@
             <%= link_to store_confirmation_path(id: confirmation.id, store_id: confirmation.store.id) do %>
           <div class="card d-flex align-items-center text-center">
             <div class="card-title">
-                <p><%= confirmation.store.name %></p>
-              <p>Line</p>
-               <p id="line-number"><%= confirmation.position %> </p>
+              <p><%= confirmation.store.name %></p>
+              <div class="card-details">
+                <div class="card-items">
+                  <%= image_tag "queue_icon.svg", alt: "alttext", :id=> "icon"%>
+                 <p id="line-number"><%= confirmation.position %> </p>
+                </div>
+              </div>
             </div>
           </div>
           <% end %>
