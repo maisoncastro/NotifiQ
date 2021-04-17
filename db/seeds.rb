@@ -45,7 +45,6 @@ iga_lasalle = create_store("IGA LaSalle", "123 LaSalle montreal quebec", iga)
   create_store(name, "123 LaSalle montreal quebec", iga)
 end
 
-
 puts "Creating Confirmations.."
 
 def create_confirmation(store, position_number, user)
