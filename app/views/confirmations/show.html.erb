@@ -40,7 +40,7 @@
       <h4>Your position</h4>
 
       <div id="position">
-      <h3 id="current_position" data-position="<%= @current_position %>"</h3>
+      <h3 id="current_position" data-position="<%= @current_position %>"></h3>
       </div>
       <h4>in line</h4>
     </div>
@@ -51,7 +51,7 @@
       <div id="map"
            style="width: 320px; height: 220px;"
            data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"> %>
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
       </div>
     </div>
   </div>
@@ -73,7 +73,7 @@
             <div class="modal-content" id="modal-show">
               <div class="modal-body">
                 <p>See you in</p>
-                <h2>5 mins</h2>
+                <h2>1 min</h2>
               </div>
             </div>
         </div>
