@@ -39,7 +39,8 @@
       <h4>Your position</h4>
 
       <div id="position">
-      <h3 id="current_position"></h3>
+      <h3 id="<%= @position_element_id %>"> 
+      <%= @current_position %></h3>
       <script>
         let currentPosition = "<%= @current_position %>"
         let waitTime = "<%= @wait_time %>"
