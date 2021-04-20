@@ -49,7 +49,8 @@ puts "Creating Confirmations.."
 
 def create_confirmation(store, position_number, user)
   now = Time.now
-  confirmation = Confirmation.create!(start_time: now, end_time: now + 1.hour, position: position_number, store: store, user: user)
+  expected_visit_time = now.to_i + (position_number * 60 + 10)
+  confirmation = Confirmation.create!(start_time: now, end_time: now + 1.hour, position: position_number, store: store, user: user, expected_visit_time: expected_visit_time)
   confirmation.update_attribute :created_at, (10).days.ago
   confirmation.save!
   puts "#{user.fname} is in position #{position_number} in line "
