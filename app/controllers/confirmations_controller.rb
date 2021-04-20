@@ -14,11 +14,14 @@ class ConfirmationsController < ApplicationController
   def show
     @confirmation = Confirmation.find(params[:id])
     @store = Store.find(params[:store_id])
+    is_demo_store = @store.name == "SAQ Express"
+    @position_element_id = is_demo_store ? "current_position" : "temp-id"
     completed_confirmations = @store.confirmations.select(&:completed)
     @current_position = @confirmation.position - completed_confirmations.count
 
     now_utc = Time.now.to_i
     @wait_time = @confirmation.expected_visit_time - now_utc
+
     # one_minute = 60
     # @time = (10 * one_minute * @current_position)
     # @time = 10
@@ -46,7 +49,7 @@ class ConfirmationsController < ApplicationController
 
     case @store.name
     when 'SAQ Express'
-      @average_wait_time = 3
+      @average_wait_time = 2
     when 'SQDC Berri'
       @average_wait_time = 50
     else
@@ -68,7 +71,7 @@ class ConfirmationsController < ApplicationController
 
     case @store.name
     when 'SAQ Express'
-      wait_time = (3 * one_minute)
+      wait_time = (2 * one_minute)
     when 'SQDC Berri'
       wait_time = (50 * one_minute)
     else
