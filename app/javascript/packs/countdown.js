@@ -48,7 +48,7 @@ const start_timer = () => {
       setTimeValueInPage(timeLeft);
 
 
-      if (timeLeftInSeconds == 50) {
+      if (timeLeftInSeconds == 60) {
         $("#nextinline").modal();
       }
     } else {
