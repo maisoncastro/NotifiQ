@@ -28,59 +28,69 @@ const countdown = () => {
       document.addEventListener("DOMContentLoaded", () => {
         const timeLeftDiv = document.getElementById("timeLeft");
       });
+      start_timer();
+      setPositionValueInPage();
       setInterval(function () {
         start_timer();
+        setPositionValueInPage();
       }, 1000); // 60 * 1000 milsec
     }
   });
 };
 
 const start_timer = () => {
-  const now = Math.floor(Date.now() / 1000);
-  const timeLeftDiv = document.getElementById("timeLeft");
-
-  if (timeLeftDiv.dataset.expected_time != null) {
-    const expected_visit_time = timeLeftDiv.dataset.expected_time;
-    let timeLeftMilliseconds = expected_visit_time - now;
-
-    if (timeLeftMilliseconds > -1) {
-      let timeLeft = `${getMinutes(timeLeftMilliseconds)}:${getSeconds(
-        timeLeftMilliseconds
+  let timeLeftInSeconds = getTimeLeftInSeconds();
+  if (timeLeftInSeconds) {
+    if (timeLeftInSeconds > -1) {
+      let timeLeft = `${getMinutes(timeLeftInSeconds)}:${getSeconds(
+        timeLeftInSeconds
       )}`;
       setTimeValueInPage(timeLeft);
 
-      if (timeLeftMilliseconds == 50) {
+
+      if (timeLeftInSeconds == 60) {
         $("#nextinline").modal();
       }
     } else {
       $("#nextinline").modal("hide");
-      $("#yourturn").modal();
+      $("#yourturn").modal({backdrop: 'static', keyboard: false})
     }
   }
 };
 
-const positionUpdate = () => {
-  setPositionValueInPage();
-  let waitTimeInMills = waitTime * 1000;
-  const timePerPesonInLine = waitTimeInMills / currentPosition;
-  setInterval(function () {
-    setPositionValueInPage();
-    decrementPosition();
-  }, timePerPesonInLine);
+const getTimeLeftInSeconds = () => {
+  const now = Math.floor(Date.now() / 1000);
+  const timeLeftDiv = document.getElementById("timeLeft");
+  if (timeLeftDiv && timeLeftDiv.dataset.expected_time != null) {
+    const expected_visit_time = timeLeftDiv.dataset.expected_time;
+    return expected_visit_time - now;
+  } else {
+    return false;
+  }
 };
 
-const decrementPosition = () => {
-  if (currentPosition > 0) {
-    currentPosition--;
-  }
+const getCurrentPosition = () => {
+  let timeLeftInSeconds = getTimeLeftInSeconds();
+  if (timeLeftInSeconds > 108) return 11;
+  if (timeLeftInSeconds > 96) return 10;
+  if (timeLeftInSeconds > 84) return 9;
+  if (timeLeftInSeconds > 72) return 8;
+  if (timeLeftInSeconds > 60) return 7;
+  if (timeLeftInSeconds > 48) return 6;
+  if (timeLeftInSeconds > 36) return 5;
+  if (timeLeftInSeconds > 24) return 4;
+  if (timeLeftInSeconds > 12) return 3;
+  if (timeLeftInSeconds > 0) return 2;
+
+  return 1;
 };
 
 const setPositionValueInPage = () => {
   let positionLeftDiv = document.getElementById("current_position");
 
   if (positionLeftDiv) {
-    positionLeftDiv.innerHTML = currentPosition;
+    positionLeftDiv.innerHTML = getCurrentPosition();
   }
 };
 
-export { countdown, positionUpdate };
+export { countdown };

@@ -38,8 +38,11 @@ document.addEventListener("turbolinks:load", () => {
   initMapbox();
   weatherapp();
   countdown();
-  positionUpdate();
 });
+// let positionLeftDiv = document.getElementById("current_position");
+// if (positionLeftDiv) {
+//   positionUpdate();
+// }
 
 // export { currentTime }; // <-- Add this line
 

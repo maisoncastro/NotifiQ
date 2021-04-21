@@ -14,14 +14,24 @@
 </br>
     <div class="login-home">
         <div class="button1">
+
+          <% if customer_signed_in?%>
+            <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple', method: :get %>
+          <% else %>
             <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple', method: :get %>
+          <% end %>
         </div>
 
         <div class="button2">
+            <% if business_user_signed_in? %>
+            <%= link_to 'Go to my Business page', dashboard_index_path, :class => 'btn-purple', method: :get %>
+            <% else %>
             <%= link_to 'Business', new_business_user_session_path, :class => 'btn-purple', method: :get %>
+            <% end %>
         </div>
     </br>
 </div>
+
 
 <% if customer_signed_in? %>
     <% link_to 'Log out', destroy_customer_session_path, method: :delete %>
@@ -29,3 +39,7 @@
 <% if business_user_signed_in? %>
     <% link_to 'Log out', destroy_business_user_session_path, method: :delete %>
 <% end %>
+
+
+
+

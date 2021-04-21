@@ -39,7 +39,8 @@
       <h4>Your position</h4>
 
       <div id="position">
-      <h3 id="current_position"></h3>
+      <h3 id="<%= @position_element_id %>">
+      <%= @current_position %></h3>
       <script>
         let currentPosition = "<%= @current_position %>"
         let waitTime = "<%= @wait_time %>"
@@ -103,9 +104,12 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content" id="modal-show">
               <div class="modal-body">
-                <p>Welcome to <%= @store.name %></p>
-                <h2>🎉</h2>
-                <p>Show your QR code</p>
+                <p>Welcome to <%= @store.name %> 🎉</p>
+                  <div class="mobile-qrcode">
+                    <%= @svg.html_safe %>
+                  </div>
+                <p>Show your QR code
+                <br><%= link_to "View my lineups", confirmations_path %></p>
               </div>
             </div>
         </div>
