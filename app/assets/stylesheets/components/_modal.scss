@@ -29,6 +29,11 @@
     font-family: "Roboto", "sans-serif";
     font-size: 18px;
     font-weight: 700;
+    margin: 0;
+  }
+
+  & p:first-of-type {
+    margin-bottom: 20px;
   }
 
   & h2 {
@@ -36,14 +41,6 @@
     font-family: "Roboto", "sans-serif";
     font-size: 64px;
     font-weight: 700;
-  }
-
-  & a {
-    color: $purple;
-    font-family: "Roboto", "sans-serif";
-    font-size: 18px;
-    font-weight: 700;
-    padding: 0;
   }
 
 }

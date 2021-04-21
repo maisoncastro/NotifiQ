@@ -49,12 +49,12 @@ const start_timer = () => {
       )}`;
       setTimeValueInPage(timeLeft);
 
-      if (timeLeftMilliseconds == 50) {
+      if (timeLeftMilliseconds == 60) {
         $("#nextinline").modal();
       }
     } else {
       $("#nextinline").modal("hide");
-      $("#yourturn").modal();
+      $("#yourturn").modal({backdrop: 'static', keyboard: false})
     }
   }
 };
