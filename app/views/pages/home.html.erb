@@ -16,15 +16,15 @@
         <div class="button1">
 
           <% if customer_signed_in?%>
-            <%= link_to "Customer", confirmations_path, :class => 'btn-purple', method: :get %>
+            <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple', method: :get %>
           <% else %>
             <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple', method: :get %>
           <% end %>
         </div>
 
         <div class="button2">
-            <% if customer_signed_in? %>
-            <%= link_to 'Business', dashboard_index_path, :class => 'btn-purple', method: :get %>
+            <% if business_user_signed_in? %>
+            <%= link_to 'Go to my Business page', dashboard_index_path, :class => 'btn-purple', method: :get %>
             <% else %>
             <%= link_to 'Business', new_business_user_session_path, :class => 'btn-purple', method: :get %>
             <% end %>
