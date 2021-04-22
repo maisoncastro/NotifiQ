@@ -1,35 +1,24 @@
 <title>NotifiQ - Don't Wait in Line!</title>
 
-<% if customer_signed_in? %>
-    <%# <p>I'm a Customer</p> %>
-    <% link_to 'Edit my Customer Profile', edit_customer_registration_path %>
-<% end %>
+<div class="login-home">
+  <br>
+  <h1>Welcome to NotifiQ</h1>
+    <div class="button1">
 
-<% if business_user_signed_in? %>
-<%= current_business_user.id %>
-    <p>I'm a Businees user</p>
-    <% link_to 'Edit my Business User Profile', edit_business_user_registration_path %>
-<% end %>
+      <% if customer_signed_in?%>
+        <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple', method: :get %>
+      <% else %>
+        <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple', method: :get %>
+      <% end %>
+    </div>
 
-</br>
-    <div class="login-home">
-        <div class="button1">
-
-          <% if customer_signed_in?%>
-            <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple', method: :get %>
-          <% else %>
-            <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple', method: :get %>
-          <% end %>
-        </div>
-
-        <div class="button2">
-            <% if business_user_signed_in? %>
-            <%= link_to 'Go to my Business page', dashboard_index_path, :class => 'btn-purple', method: :get %>
-            <% else %>
-            <%= link_to 'Business', new_business_user_session_path, :class => 'btn-purple', method: :get %>
-            <% end %>
-        </div>
-    </br>
+    <div class="button2">
+        <% if business_user_signed_in? %>
+        <%= link_to 'Go to my Business page', dashboard_index_path, :class => 'btn-purple', method: :get %>
+        <% else %>
+        <%= link_to 'Business', new_business_user_session_path, :class => 'btn-purple', method: :get %><br>
+        <% end %>
+    </div>
 </div>
 
 
