@@ -1,16 +1,35 @@
-<body class="mobile-page">
-  <%= render 'mobileheader' %>
+<div class="master-container">
+    <div class="image">
+        <%= image_tag "logo.png", size: "80x80" %>
+    </div>
+    <div class="purpo">
+        <%= link_to 'My Dashboard', dashboard_index_path, :id => 'hover-purp' %>
+    </div>
 
-  <div class="container">
-      <h2 >Store Registration</h2>
-      <div class="store-container ">
+    <div class="purpo2">
+        <%= link_to 'Analytics', dashboard_analytics_path, :id => 'hover-purp' %>
+    </div>
+
+  <div class="container-main-dash">
+
+      <div class="headz">
+        <h1>Add Store</h1>
+      </div>
+
+      <div class="store-container">
         <%= simple_form_for [@user, @store] do |l| %>
           <%= l.input :name, label: false, placeholder: "Store Name", input_html: { class: "form-input" } %>
           <%= l.input :address, label: false, placeholder: "Address", input_html: { class: "form-input" } %>
-          <%= l.input :capacity, label: false, placeholder: "Max. Capacity", input_html: { class: "form-input" } %>
+          <%= l.input :capacity, label: false, placeholder: "Store Capacity", input_html: { class: "form-input" } %>
+          <%= l.input :message, label: false, placeholder: "Message to your users", input_html: { class: "form-input" } %>
           <%= l.submit 'Submit', :class => 'btn', :class => 'btn-purple' %>
         <% end %>
       </div>
+
   </div>
 
+  <div class="logout">
+      <%= link_to 'Log out', destroy_business_user_session_path, method: :delete, :id => 'logz-out' %>
+  </div>
 
+</div>
