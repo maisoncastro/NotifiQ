@@ -23,6 +23,7 @@ puts "Creating Businesses.."
 saq = User.create!(fname: "john", lname: "doe", username: "saq", email: "saq@email.com", password: "123", type: BusinessUser)
 sqdc = User.create!(fname: "jane", lname: "doe", username: "sqdc", email: "sqdc@email.com", password: "123", type: BusinessUser)
 iga = User.create!(fname: "jj", lname: "doe", username: "iga", email: "iga@email.com", password: "123", type: BusinessUser)
+chez_krystina = User.create!(fname: "krystina", lname: "wagon", username: "chez_krystina", email: "chez_krystina@email.com", password: "123", type: BusinessUser)
 saq.save!
 
 puts "Creating Stores.."
@@ -37,13 +38,16 @@ end
 
 saq_express = create_store("SAQ Express", "954 Decarie montreal quebec", saq)
 
-sqdc_berri = create_store( "SQDC Berri", "123 Berri montreal quebec", sqdc)
-
-iga_lasalle = create_store("IGA LaSalle", "123 LaSalle montreal quebec", iga)
-
 ['Costco', 'McDonalds', 'IKEA', 'Nike'].each do |name|
   create_store(name, "123 LaSalle montreal quebec", iga)
 end
+
+sqdc_berri = create_store( "SQDC Berri", "123 Berri montreal quebec", sqdc)
+
+chez_krystina = create_store("Dépanneur chez Krystina", "5333 Avenue Casgrain Suite 102, Montréal, QC H2T 1X3", chez_krystina)
+
+iga_lasalle = create_store("IGA LaSalle", "123 LaSalle montreal quebec", iga)
+
 
 puts "Creating Confirmations.."
 
