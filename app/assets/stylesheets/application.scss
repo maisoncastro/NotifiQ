@@ -19,7 +19,7 @@
 
 h1 {
   text-decoration: none;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 36px;
 
 }
@@ -44,26 +44,7 @@ ul {
 }
 
 a {
-  font-family: "Roboto", "Helvetica", "sans-serif";
-  font-weight: 500;
-  font-size: 14px;
-  color: $black;
-
-  &:hover {
-    font-family: "Roboto", "Helvetica", "sans-serif";
-    font-weight: 700;
-    font-size: 14px;
-    text-decoration: none;
-    color: $purple;
-  }
-
-  &:active {
-    font-family: "Roboto", "Helvetica", "sans-serif";
-    font-weight: 700;
-    font-size: 14px;
-    // text-decoration: underline;
-    color: $purple;
-  }
+  text-decoration: none !important;
 }
 
 .purple-page {

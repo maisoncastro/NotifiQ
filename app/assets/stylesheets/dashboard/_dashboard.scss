@@ -74,7 +74,7 @@
 }
 
 #hover-purp {
-  position: relative;
+  position: relative
 }
 
 #hover-purp::before {
@@ -84,7 +84,7 @@
   left: -33px;
   width: 27px;
   height: 12px;
-  background-color: $purple;
+  background-color: $purple !important;
   display: none;
 }
 
