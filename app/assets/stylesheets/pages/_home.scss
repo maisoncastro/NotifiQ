@@ -1,26 +1,48 @@
 // Specific CSS for your home-page
-.login-home {
-  margin: auto;
-  // position: absolute;
-  // left: 38%;
-  // top: 29%;
-  text-align: center;
-  width: 415px;
-  height: 264px;
-  box-shadow: 0px 8px 40px
-    rgba(
-      112.000000923872,
-      144.00000661611557,
-      176.00000470876694,
-      0.20000000298023224
-    );
+// .login-home {
+//   display: flex;
+//   flex-direction: column;
+//   text-align: center;
+//   align-items: center;
+//   box-shadow: 0px 8px 40px
+//     rgba(
+//       112.000000923872,
+//       144.00000661611557,
+//       176.00000470876694,
+//       0.20000000298023224
+//     );
+//   background-color: $light-purple;
+// }
+
+.container__div {
   background-color: $light-purple;
 }
 
-.button1 {
-  padding-top: 10%;
-  padding-bottom: 37px;
+.p-5 {
+  padding: 10rem !important;
 }
+// .button2 {
+// }
 
-.button2 {
-}
+// .login-home {
+//   margin: auto;
+//   // position: absolute;
+//   // left: 38%;
+//   // top: 29%;
+//   text-align: center;
+//   width: 415px;
+//   height: 264px;
+//   box-shadow: 0px 8px 40px
+//     rgba(
+//       112.000000923872,
+//       144.00000661611557,
+//       176.00000470876694,
+//       0.20000000298023224
+//     );
+//   background-color: $light-purple;
+// }
+
+// .button1 {
+//   padding-top: 10%;
+//   padding-bottom: 37px;
+// }

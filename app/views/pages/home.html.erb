@@ -1,14 +1,18 @@
 <title>NotifiQ - Don't Wait in Line!</title>
 
-<div class="login-home">
+<body>
+<div class="backgroundz">
+<div class="login-home d-flex align-items-center justify-content-center ">
+<div class="container__div flex-column my-5 border-0 shadow rounded-3 overflow-hidden p-5 rounded bd-indigo-200">
   <br>
-  <h1>Welcome to NotifiQ</h1>
-    <div class="button1">
+  <h1 class="heads text-center mb-3">Welcome to NotifiQ</h1>
+  <div class="btns_container text-center p-3 mb-3">
+    <div class="button1 mb-5">
 
       <% if customer_signed_in?%>
-        <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple', method: :get %>
+        <%= link_to "Go to my Customer page", confirmations_path, :class => 'btn-purple',method: :get %>
       <% else %>
-        <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple', method: :get %>
+        <%= link_to "Customer", new_customer_session_path, :class => 'btn-purple',method: :get %>
       <% end %>
     </div>
 
@@ -19,6 +23,9 @@
         <%= link_to 'Business', new_business_user_session_path, :class => 'btn-purple', method: :get %><br>
         <% end %>
     </div>
+    </div>
+    </div>
+</div>
 </div>
 
 
@@ -29,6 +36,7 @@
     <% link_to 'Log out', destroy_business_user_session_path, method: :delete %>
 <% end %>
 
+</body>
 
 
 
