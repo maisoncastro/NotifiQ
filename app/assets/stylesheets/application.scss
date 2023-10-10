@@ -1,3 +1,7 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
 // Graphical variables
 @import "config/fonts";
 @import "config/colors";
@@ -16,12 +20,10 @@
 @import "confirmations/index";
 @import "mobile/index";
 
-
 h1 {
   text-decoration: none;
   font-weight: 400;
   font-size: 36px;
-
 }
 
 h2 {
@@ -50,5 +52,4 @@ a {
 .purple-page {
   background-color: #f6f6fe;
   min-height: 100vh;
-
 }

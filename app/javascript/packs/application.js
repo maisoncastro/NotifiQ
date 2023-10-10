@@ -21,6 +21,8 @@ require("moment");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
+import "stylesheets/application.css";
+
 // External imports
 import "bootstrap";
 // CSS
