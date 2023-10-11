@@ -7,7 +7,8 @@
     <%= favicon_link_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', splitChunks: { chunks: 'all' } %>
+
     <%= javascript_include_tag "https://code.highcharts.com/highcharts.js", defer: true %>
 
     <meta name="description" content="<%= meta_description %>">
@@ -29,7 +30,8 @@
     <meta name="twitter:image:src" content="<%= meta_image %>">
   </head>
 
-<%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_pack_tag 'stylesheets/application', 'data-turbolinks-track': 'reload' %>
+
 <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 

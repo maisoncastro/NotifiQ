@@ -21,7 +21,7 @@ require("moment");
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 
-import "stylesheets/application.css";
+import "../../assets/stylesheets/application.css";
 
 // External imports
 import "bootstrap";
@@ -33,6 +33,7 @@ import { countdown, positionUpdate } from "./countdown.js";
 import { weatherapp } from "../packs/weather";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { Turbo } from "@hotwired/turbo-rails";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
@@ -41,18 +42,3 @@ document.addEventListener("turbolinks:load", () => {
   weatherapp();
   countdown();
 });
-// let positionLeftDiv = document.getElementById("current_position");
-// if (positionLeftDiv) {
-//   positionUpdate();
-// }
-
-// export { currentTime }; // <-- Add this line
-
-// const timeleft = document.getElementById("timeLeft");
-// if (timeleft) {
-//   setInterval(function () {
-//     // your code goes here...
-//     countdown();
-//     // console.log(time);
-//   }, 1000); // 60 * 1000 milsec
-// }

@@ -1,3 +1,11 @@
-const { environment } = require('@rails/webpacker')
+const { environment } = require("@rails/webpacker");
 
-module.exports = environment
+environment.node = {
+  dgram: "empty",
+  fs: "empty",
+  net: "empty",
+  tls: "empty",
+  child_process: "empty",
+};
+
+module.exports = environment;
