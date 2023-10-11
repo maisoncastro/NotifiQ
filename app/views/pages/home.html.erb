@@ -3,25 +3,27 @@
 <body>
   <div class="">
     <div class="login-home d-flex align-items-center justify-content-center">
-      <div
-        class="container__div flex-column my-5 border-0 shadow rounded-3 overflow-hidden rounded bd-indigo-200 w-[300px]"
-      >
-        <br />
-        <h1 class="heads text-center mb-3">NotfiQ</h1>
-        <div class="btns_container text-center p-3 mb-3">
-          <div class="button1 mb-5">
-            <% if customer_signed_in?%> <%= link_to "Go to my Customer page",
-            confirmations_path, :class => 'btn-purple',method: :get %> <% else
-            %> <%= link_to "Customer", new_customer_session_path, :class =>
-            'btn-purple',method: :get %> <% end %>
-          </div>
+      <div class="container__div">
+        <div>
+          <h1 class="heads text-center mb-3">NotfiQ</h1>
+        </div>
+        <div>
+          <div class="btns_container">
+            <div class="button1 mb-5">
+              <% if customer_signed_in?%> <%= link_to "Go to my Customer page",
+              confirmations_path, :class => 'btn-purple',method: :get %> <% else
+              %> <%= link_to "Customer", new_customer_session_path, :class =>
+              'btn-purple',method: :get %> <% end %>
+            </div>
 
-          <div class="button2">
-            <% if business_user_signed_in? %> <%= link_to 'Go to my Business
-            page', dashboard_index_path, :class => 'btn-purple', method: :get %>
-            <% else %> <%= link_to 'Business', new_business_user_session_path,
-            :class => 'btn-purple', method: :get %><br />
-            <% end %>
+            <div class="button2">
+              <% if business_user_signed_in? %> <%= link_to 'Go to my Business
+              page', dashboard_index_path, :class => 'btn-purple', method: :get
+              %> <% else %> <%= link_to 'Business',
+              new_business_user_session_path, :class => 'btn-purple', method:
+              :get %><br />
+              <% end %>
+            </div>
           </div>
         </div>
       </div>

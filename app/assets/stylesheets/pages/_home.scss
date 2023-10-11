@@ -1,9 +1,17 @@
 .container__div {
+  display: flex;
+  flex-direction: row;
+
   background-color: $light-purple;
   max-width: 1440px;
-  width: calc(100vw - 50px);
+  width: calc(100vw - 30px);
+  height: 100%;
 }
 
+.btns_container {
+  display: flex;
+  flex-direction: row;
+}
 .p-5 {
   padding: 10rem !important;
 }
