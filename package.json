@@ -15,7 +15,9 @@
     "postcss": "^8.4.31",
     "sass": "^1.50.1",
     "tailwindcss": "^3.3.3",
-    "turbolinks": "^5.2.0"
+    "turbolinks": "^5.2.0",
+    "webpack": "5.x.x",
+    "webpack-cli": "5.x.x"
   },
   "version": "0.1.0",
   "devDependencies": {
