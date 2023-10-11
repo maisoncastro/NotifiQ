@@ -2,13 +2,15 @@
 
 <body>
   <div class="">
-    <div class="login-home d-flex align-items-center justify-content-center">
+    <div
+      class="login-home d-flex align-items-center justify-content-center grid grid-cols-4 gap-4"
+    >
       <div class="container__div">
         <div>
           <h1 class="heads text-center mb-3">NotfiQ</h1>
         </div>
         <div>
-          <div class="btns_container">
+          <div class="btns_container flex flex-col">
             <div class="button1 mb-5">
               <% if customer_signed_in?%> <%= link_to "Go to my Customer page",
               confirmations_path, :class => 'btn-purple',method: :get %> <% else
